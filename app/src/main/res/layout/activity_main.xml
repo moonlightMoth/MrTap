@@ -15,7 +15,7 @@
         android:background="@drawable/button_states"
         android:text="qwe"
         android:id="@+id/round"
-        android:textSize="50dp"
+        android:textSize="50sp"
 
         />
 
