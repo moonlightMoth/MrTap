@@ -55,6 +55,7 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
                 setText(Integer.toString(clicked));
 
+
                 if (clicked<=0)
                 {
 

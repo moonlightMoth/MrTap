@@ -60,7 +60,6 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
 
                     setVisibility(View.GONE);
 
-
                     setButtVision(one, two);
                 }
             }
