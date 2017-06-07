@@ -70,28 +70,41 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-}
 
+    public void endOfGame(){
+        findViewById(R.id.roundGreen).setVisibility(View.GONE);
+        findViewById(R.id.roundYellow).setVisibility(View.GONE);
+        findViewById(R.id.bomb).setVisibility(View.GONE);
 
-class Timer extends CountDownTimer{
+        findViewById(R.id.endTitle).setVisibility(View.VISIBLE);
 
-    ProgressBar hpBar ;
-
-    public Timer(long millisInFuture, long countDownInterval, ProgressBar hp) {
-        super(millisInFuture, countDownInterval);
-        hpBar=hp;
     }
 
-    public void onTick(long millisUntilFinished) {
-        hpBar.setProgress(hpBar.getProgress()-1);
-        if(hpBar.getProgress()==0){
-            //end of game
+
+
+    class Timer extends CountDownTimer{
+
+        ProgressBar hpBar ;
+
+        public Timer(long millisInFuture, long countDownInterval, ProgressBar hp) {
+            super(millisInFuture, countDownInterval);
+            hpBar=hp;
+        }
+
+        public void onTick(long millisUntilFinished) {
+            hpBar.setProgress(hpBar.getProgress()-1);
+            if(hpBar.getProgress()==0){
+                endOfGame();
+            }
+        }
+        public void onFinish() {
+
         }
     }
-    public void onFinish() {
-
-    }
 }
+
+
+
 
 
 

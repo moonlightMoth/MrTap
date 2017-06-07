@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="pops: "
-            android:textColor="#EEEEEE"
+            android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:id="@+id/pops"/>
 
@@ -40,11 +40,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="taps: "
-            android:textColor="#EEEEEE"
+            android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:id="@+id/taps"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#FE6767"
+        android:textSize="120sp"
+        android:text="Game Over"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:id="@+id/endTitle"
+        />
 
     <com.example.user.clicker1.GreenButton
 
