@@ -32,8 +32,8 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
     }
 
 
-    public void init(GreenButton one,
-                     YellowButton two) {
+    public void init(final GreenButton one,
+                     final YellowButton two) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -57,12 +57,11 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
 
                 if (clicked<=0)
                 {
-                    vars.setClicked(0);
+
                     setVisibility(View.GONE);
-                    vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
-                    vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
 
 
+                    setButtVision(one, two);
                 }
             }
 
