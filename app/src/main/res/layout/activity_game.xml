@@ -8,10 +8,14 @@
     <Button
 
         android:id="@+id/button3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:text="Pause"
         android:background="@drawable/button_states"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"/>
+
+
 </RelativeLayout>
