@@ -37,7 +37,8 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
                      final YellowButton yb,
                      final TextView pops,
                      final TextView taps,
-                     final ProgressBar hp) {
+                     final ProgressBar hp,
+                     final Bomb bomb){
 
         setVisibility(View.VISIBLE);
 
@@ -70,7 +71,10 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
                     //vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
-                    setButtVision(gb, yb,pops,taps,hp);
+
+                    setBombVision(bomb,hp);
+
+                    setButtVision(gb, yb,pops,taps,hp,bomb);
                 }
             }
 
@@ -81,16 +85,33 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
                               YellowButton yb,
                               TextView pops,
                               TextView taps,
-                              ProgressBar hp){
+                              ProgressBar hp,
+                              Bomb bomb){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(gb,yb,pops,taps,hp); break;
-            case 2:  yb.init(gb,yb,pops,taps,hp); break;
+            case 1:  gb.init(gb,yb,pops,taps,hp,bomb); break;
+            case 2:  yb.init(gb,yb,pops,taps,hp,bomb); break;
         }
 
+    }
+
+    public void setBombVision(Bomb bomb, ProgressBar hp)
+    {
+        int rand = new Random().nextInt(15)+1;
+
+        switch (rand)
+        {
+            case 7: createBomb(bomb,hp); break;
+            case 4: createBomb(bomb,hp); break;
+        }
+    }
+
+    public void createBomb(Bomb bomb, ProgressBar hp)
+    {
+        bomb.init(hp);
     }
 
 
