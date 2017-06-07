@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.lang.reflect.Method;
 import java.util.Random;
 
 /**
@@ -18,21 +19,21 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
     public GreenButton(Context context) {
         super(context);
-        init();
+        setVisibility(View.GONE);
     }
 
     public GreenButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        setVisibility(View.GONE);
     }
 
     public GreenButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        setVisibility(View.GONE);
     }
 
 
-    private void init() {
+    public void init(final GreenButton one, final YellowButton two) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -56,14 +57,32 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
                 if (clicked<=0)
                 {
+                    vars.setClicked(0);
                     setVisibility(View.GONE);
                     vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
                     vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
+
+                    setButtVision(one, two);
                 }
             }
 
         });
     }
+
+    public void setButtVision(GreenButton one,
+                              YellowButton two){
+        int rand;
+        rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
+
+        switch(rand)
+        {
+            case 1:  one.init(one,two); break;
+            case 2:  two.init(one,two); break;
+        }
+
+    }
+
+
 
 
 }

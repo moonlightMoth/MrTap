@@ -12,13 +12,7 @@ import android.widget.Button;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    public int min = 150;
-    public int wid;
-    public int hei;
-    private int maxNOTTD; // max and min number of taps on circle to
-    private int minNOTTD; // destroy it
 
-    private int clicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +27,37 @@ public class MainActivity extends AppCompatActivity {
         WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(displayMetrics);
 
-        wid = displayMetrics.widthPixels;
+
         vars.setDispalyHeight(displayMetrics.heightPixels);
         vars.setDispalyWidth(displayMetrics.widthPixels);
 
         setContentView(R.layout.activity_main);
 
 
+        final GreenButton greenButton = (GreenButton) findViewById(R.id.roundGreen);
+        final YellowButton yellowButton = (YellowButton) findViewById(R.id.roundYellow);
+
+
+
+
+        setButtVision(greenButton,yellowButton);
+
+
     }
 
-
-    public void setButtVision(){
+    public void setButtVision(GreenButton one,
+                              YellowButton two){
         int rand;
-        rand=new Random().nextInt();
+        rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
+
+        switch(rand)
+        {
+            case 1:  one.init(one, two); break;
+            case 2:  two.init(one, two); break;
+        }
+
     }
+
+
 
 }
