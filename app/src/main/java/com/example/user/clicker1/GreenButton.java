@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.lang.reflect.Method;
@@ -37,7 +38,8 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
     public void init(final GreenButton gb,
                      final YellowButton yb,
                      final TextView pops,
-                     final TextView taps) {
+                     final TextView taps,
+                     final ProgressBar hp) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -59,14 +61,18 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
                 setText(Integer.toString(vars.getClicked()));
                 vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
                 taps.setText("taps: " + vars.getTaps());
+                hp.setProgress(hp.getProgress()+1);
 
 
                 if (vars.getClicked()<=0)
                 {
                     vars.setPops(vars.getPops()+1);
+                    hp.setProgress(hp.getProgress()+5);
                     pops.setText("pops: " + vars.getPops());
+                    //vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
+                    //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
-                    setButtVision(gb, yb,pops,taps);
+                    setButtVision(gb, yb,pops,taps,hp);
                 }
             }
 
@@ -76,14 +82,15 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
     public void setButtVision(GreenButton gb,
                               YellowButton yb,
                               TextView pops,
-                              TextView taps){
+                              TextView taps,
+                              ProgressBar hp){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(gb,yb,pops,taps); break;
-            case 2:  yb.init(gb,yb,pops,taps); break;
+            case 1:  gb.init(gb,yb,pops,taps,hp); break;
+            case 2:  yb.init(gb,yb,pops,taps,hp); break;
         }
 
     }
