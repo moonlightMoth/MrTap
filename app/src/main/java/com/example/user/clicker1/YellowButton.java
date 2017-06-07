@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -14,7 +15,6 @@ import java.util.Random;
 
 public class YellowButton extends android.support.v7.widget.AppCompatButton {
 
-    private int clicked;
 
     public YellowButton(Context context) {
         super(context);
@@ -32,17 +32,19 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
     }
 
 
-    public void init(final GreenButton one,
-                     final YellowButton two) {
+    public void init(final GreenButton gb,
+                     final YellowButton yb,
+                     final TextView pops,
+                     final TextView taps) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
 
         vars.setClicked(new Random().nextInt(vars.getMaxNuberOfTapToDestroy()-
                 vars.getMinNuberOfTapToDestroy()+1)+vars.getMinNuberOfTapToDestroy());
-        clicked = vars.getClicked();
 
-        setText(Integer.toString(clicked));
+
+        setText(Integer.toString(vars.getClicked()));
 
         setX(new Random().nextInt(vars.getDispalyWidth()-100));
         setY(new Random().nextInt(vars.getDispalyHeight()-100));
@@ -51,31 +53,35 @@ public class YellowButton extends android.support.v7.widget.AppCompatButton {
             @Override
             public void onClick(View v) {
 
-                clicked-=vars.getNumOfClicksPerTap();
+                vars.setClicked(vars.getClicked()-vars.getNumOfClicksPerTap());
+                setText(Integer.toString(vars.getClicked()));
+                vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
 
-                setText(Integer.toString(clicked));
+                taps.setText("taps: " + vars.getTaps());
 
-                if (clicked<=0)
+                if (vars.getClicked()<=0)
                 {
-
+                    vars.setPops(vars.getPops()+1);
+                    pops.setText("pops: " + vars.getPops());
                     setVisibility(View.GONE);
-
-                    setButtVision(one, two);
+                    setButtVision(gb, yb,pops,taps);
                 }
             }
 
         });
     }
 
-    public void setButtVision(GreenButton one,
-                              YellowButton two){
+    public void setButtVision(GreenButton gb,
+                              YellowButton yb,
+                              TextView pops,
+                              TextView taps){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  one.init(one,two); break;
-            case 2:  two.init(one,two); break;
+            case 1:  gb.init(gb,yb,pops,taps); break;
+            case 2:  yb.init(gb,yb,pops,taps); break;
         }
 
     }
