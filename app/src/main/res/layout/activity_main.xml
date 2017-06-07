@@ -17,6 +17,36 @@
         android:id="@+id/round"
         android:textSize="50sp"
 
+        tools:layout_editor_absoluteY="92dp"
+        tools:layout_editor_absoluteX="0dp" />
+    <Button
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/button_bomb"
+        android:text="!!!"
+        android:id="@+id/bomb"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteY="92dp"
+        tools:layout_editor_absoluteX="148dp"
+        android:textColor="#ff0000"
         />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="dp"
+        android:max="100"
+        android:progress="100"
+        android:scaleY="4"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="400dp"
+        android:layout_height="400dp" />
 
 </android.support.constraint.ConstraintLayout>
