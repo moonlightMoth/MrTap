@@ -44,8 +44,8 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
         setText(Integer.toString(clicked));
 
-        setX(new Random().nextInt(vars.getDispalyWidth()-100));
-        setY(new Random().nextInt(vars.getDispalyHeight()-100));
+        setX(new Random().nextInt(vars.getDispalyWidth()-1000));
+        setY(new Random().nextInt(vars.getDispalyHeight()-1000));
 
         setOnClickListener(new OnClickListener() {
             @Override
@@ -57,10 +57,9 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
                 if (clicked<=0)
                 {
-                    vars.setClicked(0);
+
                     setVisibility(View.GONE);
-                    vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
-                    vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
+
 
                     setButtVision(one, two);
                 }
