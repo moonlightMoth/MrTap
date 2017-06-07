@@ -24,56 +24,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        Vars vars = new Vars();
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
 
-        Button mbutton = (Button) findViewById(R.id.round);
 
         WindowManager wm = (WindowManager) getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(displayMetrics);
 
-        wid = (int)displayMetrics.widthPixels;
-        hei =  (int)displayMetrics.heightPixels;
+        wid = displayMetrics.widthPixels;
+        vars.setDispalyHeight(displayMetrics.heightPixels);
+        vars.setDispalyWidth(displayMetrics.widthPixels);
 
-        Log.d("asd", Integer.toString(wid));
+        setContentView(R.layout.activity_main);
 
 
+    }
 
-        maxNOTTD = 1;
-        minNOTTD = 1;
 
-        clicked = new Random().nextInt(maxNOTTD-minNOTTD+1)+minNOTTD;
-        mbutton.setX(new Random().nextInt(wid-100));
-        mbutton.setY(new Random().nextInt(hei-100));
-        mbutton.setText(Integer.toString(clicked));
-
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clicked--;
-                Button butt = (Button) findViewById(R.id.round);
-                butt.setText(Integer.toString(clicked));
-
-                if (clicked==0) {
-                    butt.setVisibility(View.GONE);
-                    Log.d("button", "clicked");
-
-                    butt.setX(new Random().nextInt(wid-400)); //redo
-                    butt.setY(new Random().nextInt(hei-650)); //
-
-//vars.setMinNumOfTapsToDestroy(vars.getMinNumOfTapsToDestroy()+2);
-//vars.setMaxNumOfTapsToDestroy(vars.getMaxNumOfTapsToDestroy()+2);
-//minNOTTD+=2;
-// maxNOTTD+=2;
-
-                    clicked = new Random().nextInt(maxNOTTD-minNOTTD+1)+minNOTTD;
-                    butt.setText(Integer.toString(clicked));
-                    butt.setVisibility(View.VISIBLE);
-                }
-            }
-        };
-        mbutton.setOnClickListener(listener);
+    public void setButtVision(){
+        int rand;
+        rand=new Random().nextInt();
     }
 
 }

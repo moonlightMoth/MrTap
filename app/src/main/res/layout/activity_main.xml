@@ -8,15 +8,26 @@
     android:background="@color/colorPrimary"
     >
 
+    <com.example.user.clicker1.GreenButton
 
-    <Button
         android:layout_width="60pt"
         android:layout_height="60pt"
-        android:background="@drawable/button_states"
-        android:text="qwe"
-        android:id="@+id/round"
+        android:background="@drawable/green_button_states"
+        android:text=""
+        android:id="@+id/roundGreen"
         android:textSize="50sp"
-
         />
+
+    <com.example.user.clicker1.YellowButton
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/yellow_button_states"
+        android:text=""
+        android:id="@+id/roundYellow"
+        android:textSize="50sp"
+        />
+
+
+
 
 </android.support.constraint.ConstraintLayout>
