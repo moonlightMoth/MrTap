@@ -1,6 +1,7 @@
 package com.example.user.clicker1;
 
 import android.content.Context;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -42,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView tapsField = (TextView) findViewById(R.id.taps);
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
 
-        setButtVision(greenButton,yellowButton,popsField,tapsField);
+
+        new Timer(Integer.MAX_VALUE, 200, bar).start();
+
+
+
+        setButtVision(greenButton,yellowButton,popsField,tapsField, bar);
 
 
     }
@@ -50,18 +56,51 @@ public class MainActivity extends AppCompatActivity {
     public void setButtVision(GreenButton gb,
                               YellowButton yb,
                               TextView pops,
-                              TextView taps){
+                              TextView taps,
+                              ProgressBar hp){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(gb, yb, pops, taps); break;
-            case 2:  yb.init(gb, yb, pops, taps); break;
+            case 1:  gb.init(gb, yb, pops, taps, hp); break;
+            case 2:  yb.init(gb, yb, pops, taps, hp); break;
         }
 
     }
-
-
-
 }
+
+
+class Timer extends CountDownTimer{
+
+    ProgressBar hpBar ;
+
+    public Timer(long millisInFuture, long countDownInterval, ProgressBar hp) {
+        super(millisInFuture, countDownInterval);
+        hpBar=hp;
+    }
+
+    public void onTick(long millisUntilFinished) {
+        hpBar.setProgress(hpBar.getProgress()-1);
+        if(hpBar.getProgress()==0){
+            //end of game
+        }
+    }
+    public void onFinish() {
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
