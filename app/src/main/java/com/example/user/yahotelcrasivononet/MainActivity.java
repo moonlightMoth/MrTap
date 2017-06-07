@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(llog,"App started");
 
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.jijnhidbqyss);
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
