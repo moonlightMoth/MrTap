@@ -62,17 +62,18 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
                 setText(Integer.toString(vars.getClicked()));
                 vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
                 taps.setText("taps: " + vars.getTaps());
-                hp.setProgress(hp.getProgress()+1);
+                hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
 
 
                 if (vars.getClicked()<=0)
                 {
                     vars.setPops(vars.getPops()+1);
-                    hp.setProgress(hp.getProgress()+5);
+                   // hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
                     pops.setText("pops: " + vars.getPops());
                     //vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
+                    bomb.setVisibility(View.GONE);
 
                     setBombVision(bomb,hp);
 
