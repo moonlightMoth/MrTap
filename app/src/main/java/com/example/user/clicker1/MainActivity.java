@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         final Button mbutton = (Button) findViewById(R.id.round);
         final Button bbutton = (Button) findViewById(R.id.bomb);
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
