@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
                 butt.setText(Integer.toString(clicked));
 
+
                 if (clicked==0) {
                     butt.setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
