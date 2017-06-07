@@ -49,4 +49,12 @@
         android:layout_width="400dp"
         android:layout_height="400dp" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@android:drawable/star_big_on"
+        tools:layout_editor_absoluteY="33dp"
+        tools:layout_editor_absoluteX="16dp" />
+
 </android.support.constraint.ConstraintLayout>
