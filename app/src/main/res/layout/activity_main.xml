@@ -10,8 +10,8 @@
 
 
     <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60pt"
+        android:layout_height="60pt"
         android:background="@drawable/button_states"
         android:text="qwe"
         android:id="@+id/round"
