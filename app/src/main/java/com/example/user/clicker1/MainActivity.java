@@ -12,11 +12,13 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public int min = 150;
+    public int score = 0;
     public int wid;
     public int hei;
     public int HP = 100;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
         final ProgressBar end = (ProgressBar) findViewById(R.id.progressBar2);
         final ImageButton heal = (ImageButton) findViewById(R.id.imageButton);
+        final TextView text = (TextView) findViewById(R.id.textView);
 
 
 
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         bbutton.setVisibility(View.GONE);
         end.setVisibility(View.GONE);
         heal.setVisibility(View.GONE);
+        text.setX(600);
+        text.setY(700);
+        text.setVisibility(View.GONE);
 
 
 
@@ -68,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                     bbutton.setVisibility(View.GONE);
                     heal.setVisibility(View.GONE);
                     end.setVisibility(View.VISIBLE);
+                    text.setText(Integer.toString(score));
+                    text.setVisibility(View.VISIBLE);
                 }
             }
             public void onFinish() {
@@ -91,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clicked--;
+                score++;
                 Button butt = (Button) findViewById(R.id.round);
                 Button bomb = (Button) findViewById(R.id.bomb);
                 ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
