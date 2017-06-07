@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.user.clicker1.MainActivity"
     android:background="@color/colorPrimary"
     >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100"
+            android:scaleY="4"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pops: "
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            android:id="@+id/pops"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="taps: "
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            android:id="@+id/taps"/>
+
+    </LinearLayout>
 
     <com.example.user.clicker1.GreenButton
 
@@ -15,8 +53,7 @@
         android:background="@drawable/green_button_states"
         android:text=""
         android:id="@+id/roundGreen"
-        android:textSize="50sp"
-        />
+        android:textSize="50sp" />
 
     <com.example.user.clicker1.YellowButton
         android:layout_width="60pt"
@@ -24,10 +61,9 @@
         android:background="@drawable/yellow_button_states"
         android:text=""
         android:id="@+id/roundYellow"
-        android:textSize="50sp"
-        />
+        android:textSize="50sp" />
 
 
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

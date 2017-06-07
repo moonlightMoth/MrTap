@@ -12,6 +12,8 @@ public class Vars {
     private static int dispalyHeight=0;
     private static int dispalyWidth=0;
     private static int numOfRandObjects=2;
+    private static int pops=0;
+    private static int taps=0;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -91,5 +93,21 @@ public class Vars {
 
     public static int getNumOfRandObjects() {
         return numOfRandObjects;
+    }
+
+    public static int getPops() {
+        return pops;
+    }
+
+    public static void setPops(int pops) {
+        Vars.pops = pops;
+    }
+
+    public static int getTaps() {
+        return taps;
+    }
+
+    public static void setTaps(int taps) {
+        Vars.taps = taps;
     }
 }
