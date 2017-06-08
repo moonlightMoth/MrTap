@@ -23,6 +23,7 @@ public class Shop extends AppCompatActivity {
             public void onClick(View v) {
                 Vars vars = new Vars();
                 vars.setNumOfClicksPerTap(1);
+                vars.setAddHpPerTap(1);
 
                 one.setBackground(getDrawable(R.drawable.activated_button));
                 two.setBackground(getDrawable(R.drawable.button_shop));
@@ -36,6 +37,7 @@ public class Shop extends AppCompatActivity {
             public void onClick(View v) {
                 Vars vars = new Vars();
                 vars.setNumOfClicksPerTap(2);
+                vars.setAddHpPerTap(1);
 
                 one.setBackground(getDrawable(R.drawable.button_shop));
                 two.setBackground(getDrawable(R.drawable.activated_button));
@@ -48,6 +50,7 @@ public class Shop extends AppCompatActivity {
             public void onClick(View v) {
                 Vars vars = new Vars();
                 vars.setNumOfClicksPerTap(3);
+                vars.setAddHpPerTap(2);
 
                 one.setBackground(getDrawable(R.drawable.button_shop));
                 two.setBackground(getDrawable(R.drawable.button_shop));
