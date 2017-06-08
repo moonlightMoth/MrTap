@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="3333"
         android:textColor="@android:color/holo_red_light"
-        android:textSize="40pt"
+        android:textSize="30pt"
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true" />
 
@@ -24,9 +24,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         android:text="Coins:"
         android:textSize="15pt"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/appClickPerTap2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:text="+2 clicks\n peer tap"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_shop"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="41dp" />
+
+    <Button
+        android:id="@+id/appClickPerTapNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 click\n peer tap"
+        android:background="@drawable/button_shop"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@+id/appClickPerTap1"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/appClickPerTap1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1 clicks\n peer tap"
+        android:background="@drawable/button_shop"
+        android:layout_alignTop="@+id/appClickPerTap2"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>
