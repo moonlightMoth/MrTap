@@ -54,7 +54,7 @@
         android:id="@+id/endTitle"
         />
 
-    <com.example.user.yahotelcrasivononet.PublicButton
+    <com.example.user.clicker1.PublicButton
 
         android:layout_width="60pt"
         android:layout_height="60pt"
@@ -63,7 +63,7 @@
         android:id="@+id/roundGreen"
         android:textSize="50sp" />
 
-    <com.example.user.yahotelcrasivononet.PublicButton
+    <com.example.user.clicker1.PublicButton
         android:layout_width="60pt"
         android:layout_height="60pt"
         android:background="@drawable/yellow_button"
@@ -72,7 +72,7 @@
         android:textSize="50sp" />
 
 
-    <com.example.user.yahotelcrasivononet.Bomb
+    <com.example.user.clicker1.Bomb
         android:layout_width="60pt"
         android:layout_height="60pt"
         android:background="@drawable/bomb_states"
