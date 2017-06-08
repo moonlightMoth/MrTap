@@ -16,7 +16,7 @@ public class Vars {
     private static int reduceHpPerTick = 1;
     private static int addHpPerPop=0;
     private static int addHpPerTap=1;
-
+    private static int highscore=0;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -137,4 +137,8 @@ public class Vars {
     public static int getAddHpPerTap() {
         return addHpPerTap;
     }
+
+    public  static void setHighscore(int highscore){Vars.highscore=highscore;}
+
+    public static int getHighscore(){return highscore;}
 }
