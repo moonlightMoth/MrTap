@@ -32,6 +32,9 @@ public class Game extends AppCompatActivity {
 
         Vars vars = new Vars();
 
+        vars.setPops(0);
+        vars.setTaps(0);
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
 
 
