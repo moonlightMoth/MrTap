@@ -1,13 +1,12 @@
 package com.example.user.clicker1;
 
-        import android.content.Context;
-        import android.util.AttributeSet;
-        import android.util.Log;
-        import android.view.View;
-        import android.widget.ProgressBar;
-        import android.widget.TextView;
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-        import java.util.Random;
+import java.util.Random;
 
 /**
  * Created by user on 6/7/17.
@@ -39,9 +38,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                      final TextView pops,
                      final TextView taps,
                      final ProgressBar hp,
-                     final Bomb bomb,
-                     final Coins coins,
-                     final Heal heal) {
+                     final Bomb bomb) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -52,16 +49,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         setText(Integer.toString(vars.getClicked()));
 
-        int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
-        int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
-
-        vars.setX(new Random().nextInt(wid));
-        vars.setY(new Random().nextInt(hei));
-
-        setX(vars.getX());
-        setY(vars.getX());
-        Log.d("wid",Integer.toString(vars.getY()));
-        Log.d("hei",Integer.toString(vars.getX()));
+        setX(new Random().nextInt(vars.getDispalyWidth()-100));
+        setY(new Random().nextInt(vars.getDispalyHeight()-100));
 
         setOnClickListener(new OnClickListener() {
             @Override
@@ -73,76 +62,66 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                 taps.setText("taps: " + vars.getTaps());
                 hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
 
+                switch(type)
+                {
+                    case 1: break;
+                    case 2: break;
+                }
 
 
                 if (vars.getClicked()<=0)
                 {
                     vars.setPops(vars.getPops()+1);
-                    // hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
+                   // hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
                     pops.setText("pops: " + vars.getPops());
                     //vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
-                    coins.setVisibility(View.GONE);
-                    heal.setVisibility(View.GONE);
 
+                    setBombVision(bomb,hp);
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb,coins,heal);
-
-                    setEvent(bomb,hp, coins, heal);
-
+                    setButtVision(type,gb, yb,pops,taps,hp,bomb);
                 }
             }
 
         });
     }
 
-    public void setButtVision(PublicButton gb,
+    public void setButtVision(int type,
+                              PublicButton gb,
                               PublicButton yb,
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
-                              Bomb bomb,
-                              Coins coins,
-                              Heal heal){
+                              Bomb bomb){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb,coins,heal); break;
-            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb,coins,heal); break;
+            case 1:  gb.init(type, gb,yb,pops,taps,hp,bomb); break;
+            case 2:  yb.init(type, gb,yb,pops,taps,hp,bomb); break;
         }
 
     }
 
-    public void setEvent(Bomb bomb, ProgressBar hp, Coins coins, Heal heal)
+    public void setBombVision(Bomb bomb, ProgressBar hp)
     {
         int rand = new Random().nextInt(15)+1;
-        switch (rand){
-            case 7:createBomb(bomb,hp);break;
-            case 4:createBomb(bomb,hp);break;
-            case 3:createCoins(coins);break;
-            case 6:createCoins(coins);break;
-            case 8:createHeal(heal,hp);
-        }
 
+        switch (rand)
+        {
+            case 7: createBomb(bomb,hp); break;
+            case 4: createBomb(bomb,hp); break;
+        }
     }
-    public void createHeal(Heal heal, ProgressBar hp)
-    {
-        heal.init(hp);
-    }
+
     public void createBomb(Bomb bomb, ProgressBar hp)
     {
         bomb.init(hp);
     }
 
-
-    public void createCoins(Coins coins)
-    {
-        coins.init();
-    }
 
 
 
