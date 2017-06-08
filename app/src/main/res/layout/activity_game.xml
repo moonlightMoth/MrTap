@@ -17,5 +17,25 @@
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_toRightOf="@+id/button3"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/holo_purple"
+        android:progressBackgroundTint="@android:color/black"/>
+
+    <android.support.v7.widget.AlertDialogLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"></android.support.v7.widget.AlertDialogLayout>
+
+    <android.support.v7.widget.DialogTitle
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 
 </RelativeLayout>
