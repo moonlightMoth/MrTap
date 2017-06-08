@@ -1,4 +1,4 @@
-package com.example.user.yahotelcrasivononet;
+package com.example.user.clicker1;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.user.yahotelcrasivononet;
+package com.example.user.clicker1;
 
 public class Vars {
     private static int clicked=1;

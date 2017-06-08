@@ -1,4 +1,4 @@
-package com.example.user.yahotelcrasivononet;
+package com.example.user.clicker1;
 
 import android.content.Context;
 import android.os.CountDownTimer;
