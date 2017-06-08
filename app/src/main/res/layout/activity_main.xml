@@ -16,7 +16,8 @@
         android:textSize="30sp"
         android:textStyle="normal"
         android:gravity="center"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -103,11 +104,11 @@
         android:textSize="24sp" />
 
     <ImageView
-        android:src="@drawable/jijnhidbqyss"
+        android:src="@drawable/ji3nhidbqy"
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="150dp"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

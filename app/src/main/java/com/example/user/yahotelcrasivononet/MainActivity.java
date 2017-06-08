@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(llog,"App started");
 
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.jijnhidbqyss);
+        imageView.setImageResource(R.drawable.ji3nhidbqy);
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
