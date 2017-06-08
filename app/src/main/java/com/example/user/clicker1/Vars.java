@@ -16,7 +16,7 @@ public class Vars {
     private static int taps=0;
     private static int reduceHpPerTick = 1;
     private static int addHpPerPop=0;
-    private static int addHpPerTap=0;
+    private static int addHpPerTap=1;
 
 
     public void setClicked(int clicked) {

@@ -58,7 +58,7 @@
         android:id="@+id/endTitle"
         />
 
-    <com.example.user.clicker1.GreenButton
+    <com.example.user.clicker1.PublicButton
 
         android:layout_width="60pt"
         android:layout_height="60pt"
@@ -67,7 +67,7 @@
         android:id="@+id/roundGreen"
         android:textSize="50sp" />
 
-    <com.example.user.clicker1.YellowButton
+    <com.example.user.clicker1.PublicButton
         android:layout_width="60pt"
         android:layout_height="60pt"
         android:background="@drawable/yellow_button_states"

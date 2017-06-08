@@ -2,41 +2,39 @@ package com.example.user.clicker1;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.lang.reflect.Method;
 import java.util.Random;
 
 /**
  * Created by user on 6/7/17.
  */
 
-public class GreenButton extends android.support.v7.widget.AppCompatButton {
+public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
 
 
-    public GreenButton(Context context) {
+    public PublicButton(Context context) {
         super(context);
         setVisibility(View.GONE);
     }
 
-    public GreenButton(Context context, AttributeSet attrs) {
+    public PublicButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         setVisibility(View.GONE);
     }
 
-    public GreenButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public PublicButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setVisibility(View.GONE);
     }
 
 
-    public void init(final GreenButton gb,
-                     final YellowButton yb,
+    public void init(final int type,
+                     final PublicButton gb,
+                     final PublicButton yb,
                      final TextView pops,
                      final TextView taps,
                      final ProgressBar hp,
@@ -51,8 +49,8 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
         setText(Integer.toString(vars.getClicked()));
 
-        setX(new Random().nextInt(vars.getDispalyWidth()-1000));
-        setY(new Random().nextInt(vars.getDispalyHeight()-1000));
+        setX(new Random().nextInt(vars.getDispalyWidth()-100));
+        setY(new Random().nextInt(vars.getDispalyHeight()-100));
 
         setOnClickListener(new OnClickListener() {
             @Override
@@ -63,6 +61,12 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
                 vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
                 taps.setText("taps: " + vars.getTaps());
                 hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
+
+                switch(type)
+                {
+                    case 1: break;
+                    case 2: break;
+                }
 
 
                 if (vars.getClicked()<=0)
@@ -77,15 +81,16 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
                     setBombVision(bomb,hp);
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb);
+                    setButtVision(type,gb, yb,pops,taps,hp,bomb);
                 }
             }
 
         });
     }
 
-    public void setButtVision(GreenButton gb,
-                              YellowButton yb,
+    public void setButtVision(int type,
+                              PublicButton gb,
+                              PublicButton yb,
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
@@ -95,8 +100,8 @@ public class GreenButton extends android.support.v7.widget.AppCompatButton {
 
         switch(rand)
         {
-            case 1:  gb.init(gb,yb,pops,taps,hp,bomb); break;
-            case 2:  yb.init(gb,yb,pops,taps,hp,bomb); break;
+            case 1:  gb.init(type, gb,yb,pops,taps,hp,bomb); break;
+            case 2:  yb.init(type, gb,yb,pops,taps,hp,bomb); break;
         }
 
     }

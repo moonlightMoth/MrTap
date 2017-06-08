@@ -5,10 +5,8 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -37,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final GreenButton greenButton = (GreenButton) findViewById(R.id.roundGreen);
-        final YellowButton yellowButton = (YellowButton) findViewById(R.id.roundYellow);
+        final PublicButton greenButton = (PublicButton) findViewById(R.id.roundGreen);
+        final PublicButton yellowButton = (PublicButton) findViewById(R.id.roundYellow);
         final TextView popsField = (TextView) findViewById(R.id.pops);
         final TextView tapsField = (TextView) findViewById(R.id.taps);
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
@@ -47,15 +45,16 @@ public class MainActivity extends AppCompatActivity {
 
         new Timer(Integer.MAX_VALUE, 200, bar).start();
 
+        int type = new Random().nextInt(1)+1; // 1 - green; 2 - yellow
 
-
-        setButtVision(greenButton,yellowButton,popsField,tapsField, bar,bomb);
+        setButtVision(type, greenButton,yellowButton,popsField,tapsField, bar,bomb);
 
 
     }
 
-    public void setButtVision(GreenButton gb,
-                              YellowButton yb,
+    public void setButtVision(int type,
+                              PublicButton gb,
+                              PublicButton yb,
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
@@ -65,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch(rand)
         {
-            case 1:  gb.init(gb, yb, pops, taps, hp,bomb); break;
-            case 2:  yb.init(gb, yb, pops, taps, hp,bomb); break;
+            case 1:  gb.init(type, gb, yb, pops, taps, hp,bomb); break;
+            case 2:  yb.init(type, gb, yb, pops, taps, hp,bomb); break;
         }
 
     }
