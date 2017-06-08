@@ -49,9 +49,11 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         setText(Integer.toString(vars.getClicked()));
 
-        setX(new Random().nextInt(vars.getDispalyWidth()-100));
-        setY(new Random().nextInt(vars.getDispalyHeight()-100));
+        int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
+        int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
 
+        setX(new Random().nextInt(wid));
+        setY(new Random().nextInt(hei));
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
