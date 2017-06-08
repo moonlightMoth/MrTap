@@ -64,6 +64,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
 
 
+
                 if (vars.getClicked()<=0)
                 {
                     vars.setPops(vars.getPops()+1);
