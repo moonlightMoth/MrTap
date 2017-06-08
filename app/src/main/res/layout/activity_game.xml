@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:id="@+id/linearLayout">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -21,8 +21,7 @@
             android:layout_height="wrap_content"
             android:max="100"
             android:progress="100"
-            android:scaleY="4"
-            />
+            android:scaleY="4" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +43,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="346dp"
         android:textColor="#FE6767"
         android:textSize="120sp"
         android:text="Game Over"
@@ -52,7 +51,8 @@
         android:textStyle="bold"
         android:visibility="gone"
         android:id="@+id/endTitle"
-        />
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
 
     <com.example.user.clicker1.PublicButton
 
@@ -79,9 +79,27 @@
         android:id="@+id/bomb"
         android:visibility="gone"/>
 
+    <Button
+        android:id="@+id/toMenu"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button2"
+        android:layout_below="@+id/endTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="MAIN MENU"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/Restart"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button3"
+        android:layout_alignEnd="@+id/toMenu"
+        android:layout_below="@+id/toMenu"
+        android:layout_marginTop="11dp"
+        android:text="RESTART"
+        android:visibility="gone"/>
 
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

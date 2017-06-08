@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(llog,"App started");
 
+        TextView highscoree=(TextView)findViewById(R.id.textView4);
+        highscoree.setText(Integer.toString(Vars.getHighscore()));
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.ji3nhidbqy);
 
@@ -56,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onResume(){
         super.onResume();
+        TextView highscoree=(TextView)findViewById(R.id.textView4);
+        highscoree.setText(Integer.toString(Vars.getHighscore()));
         Log.d(llog,"MainMenu resumed");
     }
 }

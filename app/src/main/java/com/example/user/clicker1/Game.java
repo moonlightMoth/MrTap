@@ -1,11 +1,14 @@
 package com.example.user.clicker1;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
@@ -81,6 +84,31 @@ public class Game extends AppCompatActivity {
         findViewById(R.id.bomb).setVisibility(View.GONE);
 
         findViewById(R.id.endTitle).setVisibility(View.VISIBLE);
+
+        findViewById(R.id.toMenu).setVisibility(View.VISIBLE);
+        findViewById(R.id.Restart).setVisibility(View.VISIBLE);
+
+        final Activity this_=this;
+
+        findViewById(R.id.toMenu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(this_,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.Restart).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent( this_, Game.class );
+                finish();
+                startActivity(i);
+            }
+        });
+
+
+        if (Vars.getPops()>vars.getHighscore()) Vars.setHighscore(Vars.getPops());
 
         if(vars.getMaxPops()< vars.getPops())
             vars.setMaxPops(vars.getPops());
