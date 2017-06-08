@@ -62,11 +62,6 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                 taps.setText("taps: " + vars.getTaps());
                 hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
 
-                switch(type)
-                {
-                    case 1: break;
-                    case 2: break;
-                }
 
 
                 if (vars.getClicked()<=0)
@@ -81,15 +76,14 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
                     setBombVision(bomb,hp);
 
-                    setButtVision(type,gb, yb,pops,taps,hp,bomb);
+                    setButtVision(gb, yb,pops,taps,hp,bomb);
                 }
             }
 
         });
     }
 
-    public void setButtVision(int type,
-                              PublicButton gb,
+    public void setButtVision(PublicButton gb,
                               PublicButton yb,
                               TextView pops,
                               TextView taps,
@@ -100,8 +94,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         switch(rand)
         {
-            case 1:  gb.init(type, gb,yb,pops,taps,hp,bomb); break;
-            case 2:  yb.init(type, gb,yb,pops,taps,hp,bomb); break;
+            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb); break;
+            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb); break;
         }
 
     }

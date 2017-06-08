@@ -45,15 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         new Timer(Integer.MAX_VALUE, 200, bar).start();
 
-        int type = new Random().nextInt(1)+1; // 1 - green; 2 - yellow
 
-        setButtVision(type, greenButton,yellowButton,popsField,tapsField, bar,bomb);
+
+        setButtVision(greenButton,yellowButton,popsField,tapsField, bar,bomb);
 
 
     }
 
-    public void setButtVision(int type,
-                              PublicButton gb,
+    public void setButtVision(PublicButton gb,
                               PublicButton yb,
                               TextView pops,
                               TextView taps,
@@ -64,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch(rand)
         {
-            case 1:  gb.init(type, gb, yb, pops, taps, hp,bomb); break;
-            case 2:  yb.init(type, gb, yb, pops, taps, hp,bomb); break;
+            case 1:  gb.init(rand, gb, yb, pops, taps, hp,bomb); break;
+            case 2:  yb.init(rand, gb, yb, pops, taps, hp,bomb); break;
         }
 
     }
