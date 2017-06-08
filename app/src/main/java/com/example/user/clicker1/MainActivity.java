@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
         final Bomb bomb = (Bomb) findViewById(R.id.bomb);
 
+        bar.setProgress(100);
+
 
         new Timer(Integer.MAX_VALUE, 200, bar).start();
 
@@ -70,12 +72,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void endOfGame(){
+        Vars vars = new Vars();
         findViewById(R.id.roundGreen).setVisibility(View.GONE);
         findViewById(R.id.roundYellow).setVisibility(View.GONE);
         findViewById(R.id.bomb).setVisibility(View.GONE);
 
         findViewById(R.id.endTitle).setVisibility(View.VISIBLE);
 
+        if(vars.getMaxPops()< vars.getPops())
+            vars.setMaxPops(vars.getPops());
+        if(vars.getMaxTaps()< vars.getTaps())
+            vars.setMaxTaps(vars.getTaps());
+
+
+        vars.setPops(0);
+        vars.setTaps(0);
+
+    }
+
+    protected void onPause(){
+        super.onPause();
     }
 
 

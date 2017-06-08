@@ -4,7 +4,7 @@ package com.example.user.clicker1;
 public class Vars {
     private static int clicked=1;
     private static int coins=0;
-    private static int maxTap=0;
+    private static int maxTaps=0;
     private static int maxPops=0;
     private static int maxNuberOfTapToDestroy=4;
     private static int minNuberOfTapToDestroy=2;
@@ -51,12 +51,12 @@ public class Vars {
         return maxPops;
     }
 
-    public void setMaxTap(int maxTap) {
-        this.maxTap = maxTap;
+    public void setMaxTaps(int maxTaps) {
+        this.maxTaps = maxTaps;
     }
 
-    public int getMaxTap() {
-        return maxTap;
+    public int getMaxTaps() {
+        return maxTaps;
     }
 
     public void setMinNuberOfTapToDestroy(int minNuberOfTapToDestroy) {
