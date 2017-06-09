@@ -2,6 +2,7 @@ package com.example.user.clicker1;
 
         import android.content.Context;
         import android.util.AttributeSet;
+        import android.util.Log;
         import android.view.View;
         import android.widget.ProgressBar;
         import android.widget.TextView;
@@ -38,7 +39,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                      final TextView pops,
                      final TextView taps,
                      final ProgressBar hp,
-                     final Bomb bomb) {
+                     final Bomb bomb,
+                     final Coins coins) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -52,8 +54,14 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
         int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
         int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
 
-        setX(new Random().nextInt(wid));
-        setY(new Random().nextInt(hei));
+        vars.setX(new Random().nextInt(wid));
+        vars.setY(new Random().nextInt(hei));
+
+        setX(vars.getX());
+        setY(vars.getX());
+        Log.d("wid",Integer.toString(vars.getY()));
+        Log.d("hei",Integer.toString(vars.getX()));
+
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,10 +83,13 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
+                    coins.setVisibility(View.GONE);
 
-                    setBombVision(bomb,hp);
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb);
+                    setButtVision(gb, yb,pops,taps,hp,bomb,coins);
+
+                    setEvent(bomb,hp, coins);
+
                 }
             }
 
@@ -90,27 +101,29 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
-                              Bomb bomb){
+                              Bomb bomb,
+                              Coins coins){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb); break;
-            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb); break;
+            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb,coins); break;
+            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb,coins); break;
         }
 
     }
 
-    public void setBombVision(Bomb bomb, ProgressBar hp)
+    public void setEvent(Bomb bomb, ProgressBar hp, Coins coins)
     {
         int rand = new Random().nextInt(15)+1;
-
-        switch (rand)
-        {
-            case 7: createBomb(bomb,hp); break;
-            case 4: createBomb(bomb,hp); break;
+        switch (rand){
+            case 7:createBomb(bomb,hp);break;
+            case 4:createBomb(bomb,hp);break;
+            case 3:createCoins(coins);break;
+            case 6:createCoins(coins);break;
         }
+
     }
 
     public void createBomb(Bomb bomb, ProgressBar hp)
@@ -118,6 +131,11 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
         bomb.init(hp);
     }
 
+
+    public void createCoins(Coins coins)
+    {
+        coins.init();
+    }
 
 
 
