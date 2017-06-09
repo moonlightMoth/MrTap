@@ -1,6 +1,8 @@
 package com.example.user.clicker1;
 
+import android.os.Build;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +35,7 @@ public class Shop extends AppCompatActivity {
         });
 
         findViewById(R.id.appClickPerTap1).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 Vars vars = new Vars();
@@ -46,6 +49,7 @@ public class Shop extends AppCompatActivity {
         });
 
         findViewById(R.id.appClickPerTap2).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 Vars vars = new Vars();

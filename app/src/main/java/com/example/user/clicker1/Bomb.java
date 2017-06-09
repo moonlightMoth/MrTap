@@ -3,6 +3,7 @@ package com.example.user.clicker1;
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -26,8 +27,25 @@ public class Bomb extends AppCompatButton {
 
         final Vars vars = new Vars();
 
-        setX(new Random().nextInt(vars.getDispalyWidth()-1000));
-        setY(new Random().nextInt(vars.getDispalyHeight()-1000));
+        int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
+        int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
+
+
+        int err=0;
+        while (err==0){
+            int xx = new Random().nextInt(wid);
+            int yy = new Random().nextInt(hei);
+            if(Math.abs(xx-vars.getX())>300 && Math.abs(yy-vars.getY())>300){
+                setX(xx);
+                setY(yy);
+                err=1;
+                Log.d("widBomb",Integer.toString(xx));
+                Log.d("heiBomb",Integer.toString(yy));
+            }
+        }
+        err=0;
+
+
 
         setVisibility(View.VISIBLE);
 

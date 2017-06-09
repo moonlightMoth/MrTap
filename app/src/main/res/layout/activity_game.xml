@@ -102,5 +102,12 @@
         android:text="RESTART"
         android:visibility="gone"/>
 
+    <com.example.user.clicker1.Coins
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/coins_states"
+        android:id="@+id/coins"
+        android:visibility="gone"/>
+
 
 </RelativeLayout>

@@ -17,6 +17,8 @@ public class Vars {
     private static int addHpPerPop=0;
     private static int addHpPerTap=1;
     private static int highscore=0;
+    private static int X;
+    private static int Y;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -26,11 +28,11 @@ public class Vars {
         return clicked;
     }
 
-    public void setCoins(int coins) {
-        this.coins = coins;
+    public static void setCoins(int money) {
+        coins = money;
     }
 
-    public int getCoins() {
+    public static int getCoins() {
         return coins;
     }
 
@@ -69,6 +71,10 @@ public class Vars {
     public static void setNumOfClicksPerTap(int numOfClicksPerTap) {
         Vars.numOfClicksPerTap = numOfClicksPerTap;
     }
+    public static int getX(){return X;}
+    public static int getY(){return Y;}
+    public void setX(int XX){this.X=XX;}
+    public void setY(int YY){this.Y=YY;}
 
     public static int getNumOfClicksPerTap() {
         return numOfClicksPerTap;
