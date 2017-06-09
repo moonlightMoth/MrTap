@@ -9,17 +9,16 @@ import android.widget.ProgressBar;
 
 import java.util.Random;
 
-
-public class Bomb extends AppCompatButton {
-    public Bomb(Context context) {
+public class Heal extends AppCompatButton {
+    public Heal(Context context) {
         super(context);
     }
 
-    public Bomb(Context context, AttributeSet attrs) {
+    public Heal(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public Bomb(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Heal(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -30,7 +29,6 @@ public class Bomb extends AppCompatButton {
         int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
         int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
 
-
         int err=0;
         while (err==0){
             int xx = new Random().nextInt(wid);
@@ -39,25 +37,22 @@ public class Bomb extends AppCompatButton {
                 setX(xx);
                 setY(yy);
                 err=1;
-                Log.d("widBomb",Integer.toString(xx));
-                Log.d("heiBomb",Integer.toString(yy));
+                Log.d("widCoin",Integer.toString(xx));
+                Log.d("heiCoin",Integer.toString(yy));
             }
         }
         err=0;
-
-
 
         setVisibility(View.VISIBLE);
 
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                hp.setProgress(hp.getProgress()/2);
-                setVisibility(View.GONE);
-
+                Vars vars = new Vars();
+                hp.setProgress(hp.getProgress()+vars.getHealPerHealCircle());
+                setVisibility(GONE);
             }
         });
     }
-
 
 }

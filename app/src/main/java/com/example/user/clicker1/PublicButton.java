@@ -2,6 +2,7 @@ package com.example.user.clicker1;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -38,7 +39,9 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                      final TextView pops,
                      final TextView taps,
                      final ProgressBar hp,
-                     final Bomb bomb) {
+                     final Bomb bomb,
+                     final Coins coins,
+                     final Heal heal) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -49,8 +52,23 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         setText(Integer.toString(vars.getClicked()));
 
-        setX(new Random().nextInt(vars.getDispalyWidth()-100));
-        setY(new Random().nextInt(vars.getDispalyHeight()-100));
+        int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
+        int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
+
+
+        int err=0;
+        while (err==0){
+            int xx = new Random().nextInt(wid);
+            int yy = new Random().nextInt(hei);
+            if( Math.abs(yy-vars.getY())>300){
+                setX(xx);
+                setY(yy);
+                err=1;
+                Log.d("widBomb",Integer.toString(xx));
+                Log.d("heiBomb",Integer.toString(yy));
+            }
+        }
+        err=0;
 
         setOnClickListener(new OnClickListener() {
             @Override
@@ -73,10 +91,14 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
                     setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
+                    coins.setVisibility(View.GONE);
+                    heal.setVisibility(View.GONE);
 
                     setBombVision(bomb,hp);
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb);
+                    setBoosterVision(coins,heal,hp);
+
+                    setButtVision(gb, yb,pops,taps,hp,bomb,coins,heal);
                 }
             }
 
@@ -88,21 +110,24 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
-                              Bomb bomb){
+                              Bomb bomb,
+                              final Coins coins,
+                              final Heal heal){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb); break;
-            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb); break;
+            case 1:  gb.init(rand,gb,yb,pops,taps,hp,bomb,coins,heal); break;
+            case 2:  yb.init(rand,gb,yb,pops,taps,hp,bomb,coins,heal); break;
         }
 
     }
 
     public void setBombVision(Bomb bomb, ProgressBar hp)
     {
-        int rand = new Random().nextInt(15)+1;
+        Vars vars = new Vars();
+        int rand = new Random().nextInt(vars.getBombChance());
 
         switch (rand)
         {
@@ -114,6 +139,28 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
     public void createBomb(Bomb bomb, ProgressBar hp)
     {
         bomb.init(hp);
+    }
+
+    public void setBoosterVision(Coins coins, Heal heal, ProgressBar hp)
+    {
+        Vars vars = new Vars();
+        int rand = new Random().nextInt(vars.getBoosterChance());
+
+        switch (rand)
+        {
+            case 7: createCoins(coins); break;
+            case 4: createHeal(heal,hp); break;
+        }
+    }
+
+    public void createCoins(Coins coins)
+    {
+        coins.init();
+    }
+
+    public void createHeal(Heal heal, ProgressBar hp)
+    {
+        heal.init(hp);
     }
 
 

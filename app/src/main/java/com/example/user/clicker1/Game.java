@@ -101,6 +101,7 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(this_,MainActivity.class);
+
                 startActivity(intent);
 
             }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         TextView highscoree=(TextView)findViewById(R.id.textView4);
         highscoree.setText(Integer.toString(Vars.getHighscore()));
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.ji3nhidbqy);
+        imageView.setImageResource(R.drawable.imagemainmenu);
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override

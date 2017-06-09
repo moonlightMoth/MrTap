@@ -19,6 +19,9 @@ public class Vars {
     private static int highscore=0;
     private static int X;
     private static int Y;
+    private static int bombChance=10;
+    private static int boosterChance=20;
+    private static int healPerHealCircle=10;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -147,4 +150,28 @@ public class Vars {
     public  static void setHighscore(int highscore){Vars.highscore=highscore;}
 
     public static int getHighscore(){return highscore;}
+
+    public static void setBombChance(int bombCance) {
+        Vars.bombChance = bombChance;
+    }
+
+    public static int getBombChance() {
+        return bombChance;
+    }
+
+    public static void setBoosterChance(int boosterChance) {
+        Vars.boosterChance = boosterChance;
+    }
+
+    public static int getBoosterChance() {
+        return boosterChance;
+    }
+
+    public static void setHealPerHealCircle(int healPerHealCircle) {
+        Vars.healPerHealCircle = healPerHealCircle;
+    }
+
+    public static int getHealPerHealCircle() {
+        return healPerHealCircle;
+    }
 }
