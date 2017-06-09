@@ -22,7 +22,7 @@ public class Shop extends AppCompatActivity {
         final Button two=(Button)findViewById(R.id.appClickPerTap1);
         final Button three=(Button)findViewById(R.id.appClickPerTap2);
         final TextView amount = (TextView) findViewById(R.id.textView);
-        amount.setText(vars.getCoins());
+        amount.setText(Integer.toString(vars.getCoins()));
 
 
         findViewById(R.id.appClickPerTapNormal).setOnClickListener(new View.OnClickListener() {

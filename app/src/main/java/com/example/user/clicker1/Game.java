@@ -53,13 +53,14 @@ public class Game extends AppCompatActivity {
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
         final Bomb bomb = (Bomb) findViewById(R.id.bomb);
         final Coins coins = (Coins) findViewById(R.id.coins);
+        final Heal heal = (Heal) findViewById(R.id.heal);
 
 
         new Timer(Integer.MAX_VALUE, 200, bar).start();
 
 
 
-        setButtVision(greenButton,yellowButton,popsField,tapsField, bar,bomb,coins);
+        setButtVision(greenButton,yellowButton,popsField,tapsField, bar,bomb,coins,heal);
 
 
     }
@@ -70,14 +71,15 @@ public class Game extends AppCompatActivity {
                               TextView taps,
                               ProgressBar hp,
                               Bomb bomb,
-                                Coins coins){
+                                Coins coins,
+                              Heal heal){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb, yb, pops, taps, hp,bomb, coins); break;
-            case 2:  yb.init(rand, gb, yb, pops, taps, hp,bomb, coins); break;
+            case 1:  gb.init(rand, gb, yb, pops, taps, hp,bomb, coins, heal); break;
+            case 2:  yb.init(rand, gb, yb, pops, taps, hp,bomb, coins, heal); break;
         }
 
     }
