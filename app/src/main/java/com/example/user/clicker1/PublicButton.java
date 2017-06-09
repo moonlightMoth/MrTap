@@ -40,7 +40,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                      final TextView taps,
                      final ProgressBar hp,
                      final Bomb bomb,
-                     final Coins coins) {
+                     final Coins coins,
+                     final Heal heal) {
         setVisibility(View.VISIBLE);
 
         final Vars vars = new Vars();
@@ -84,11 +85,12 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                     setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
                     coins.setVisibility(View.GONE);
+                    heal.setVisibility(View.GONE);
 
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb,coins);
+                    setButtVision(gb, yb,pops,taps,hp,bomb,coins,heal);
 
-                    setEvent(bomb,hp, coins);
+                    setEvent(bomb,hp, coins, heal);
 
                 }
             }
@@ -102,19 +104,20 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                               TextView taps,
                               ProgressBar hp,
                               Bomb bomb,
-                              Coins coins){
+                              Coins coins,
+                              Heal heal){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb,coins); break;
-            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb,coins); break;
+            case 1:  gb.init(rand, gb,yb,pops,taps,hp,bomb,coins,heal); break;
+            case 2:  yb.init(rand, gb,yb,pops,taps,hp,bomb,coins,heal); break;
         }
 
     }
 
-    public void setEvent(Bomb bomb, ProgressBar hp, Coins coins)
+    public void setEvent(Bomb bomb, ProgressBar hp, Coins coins, Heal heal)
     {
         int rand = new Random().nextInt(15)+1;
         switch (rand){
@@ -122,10 +125,14 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
             case 4:createBomb(bomb,hp);break;
             case 3:createCoins(coins);break;
             case 6:createCoins(coins);break;
+            case 8:createHeal(heal,hp);
         }
 
     }
-
+    public void createHeal(Heal heal, ProgressBar hp)
+    {
+        heal.init(hp);
+    }
     public void createBomb(Bomb bomb, ProgressBar hp)
     {
         bomb.init(hp);

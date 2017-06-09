@@ -108,5 +108,15 @@
         android:id="@+id/coins"
         android:visibility="gone"/>
 
+    <com.example.user.clicker1.Heal
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/heal_states"
+        android:id="@+id/heal"
+        android:visibility="gone"
+        android:text="+"
+        android:textSize="60dp"
+        android:textColor="#ff99cc00"/>
+
 
 </RelativeLayout>
