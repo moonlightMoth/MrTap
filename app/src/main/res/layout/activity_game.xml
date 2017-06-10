@@ -109,6 +109,7 @@
         android:id="@+id/coins"
         android:visibility="gone"/>
 
+
     <com.example.user.clicker1.Heal
         android:layout_width="60pt"
         android:layout_height="60pt"
