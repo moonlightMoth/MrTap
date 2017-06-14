@@ -44,6 +44,7 @@ public class Shop extends AppCompatActivity {
                     vars.setNumOfClicksPerTap(vars.getNumOfClicksPerTap() + 1);
                     amountDMGPerTap.setText(Integer.toString(vars.getNumOfClicksPerTap()));
                     Settings.setCoins(Settings.getCoins() - Settings.getCoinsToUpCPT());
+                    Settings.setCoinsToUpCPT(Settings.getCoinsToUpCPT()*2);
                     TextView scores = (TextView) findViewById(R.id.textView);
                     Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
                     scores.setText(Integer.toString(Settings.getCoins()));
@@ -62,6 +63,7 @@ public class Shop extends AppCompatActivity {
                     vars.setBombReduceMult(vars.getBombReduceMult() + 0.1);
                     amountDMGPerBomb.setText(Integer.toString((int) Math.round(vars.getBombReduceMult() * 10)));
                     Settings.setCoins(Settings.getCoins() - Settings.getCoinsToRedDPB());
+                    Settings.setCoinsToRedDPB(Settings.getCoinsToRedDPB()*2);
                     TextView scores = (TextView) findViewById(R.id.textView);
                     Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
                     scores.setText(Integer.toString(Settings.getCoins()));
@@ -80,6 +82,7 @@ public class Shop extends AppCompatActivity {
                     vars.setCPC(vars.getCPC() + 1);
                     amountCPC.setText(Integer.toString(vars.getCPC()));
                     Settings.setCoins(Settings.getCoins() - Settings.getCoinsToUpCPC());
+                    Settings.setCoinsToUpCPC(Settings.getCoinsToUpCPC()*2);
                     TextView scores = (TextView) findViewById(R.id.textView);
                     Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
                     scores.setText(Integer.toString(Settings.getCoins()));

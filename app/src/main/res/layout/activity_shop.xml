@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:text=""
         android:textColor="@android:color/holo_red_light"
-        android:textSize="30pt" />
+        android:textSize="60sp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -27,7 +27,7 @@
         android:layout_marginTop="10dp"
         android:text="Coins:"
         android:textColor="@android:color/white"
-        android:textSize="15pt" />
+        android:textSize="40sp" />
 
     <LinearLayout
         android:id="@+id/BesheniyEvrey1Parent"
@@ -43,13 +43,13 @@
             android:text="DMG per tap"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text=""
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:id="@+id/amountDMGPerTap"/>
 
         <Button
@@ -76,12 +76,12 @@
             android:text="Bomb DMG"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text=""
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:id="@+id/amountDMGPerBomb"/>
 
         <Button
@@ -107,13 +107,13 @@
             android:text="Coins per coin"
             android:layout_weight="1"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text=""
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:id="@+id/amountCPC"/>
 
         <Button

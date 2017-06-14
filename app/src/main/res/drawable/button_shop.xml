@@ -17,10 +17,10 @@
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="1000dp" />
-            <solid android:color="#3AA76D" />
+            <solid android:color="@android:color/holo_red_light" />
             <stroke
                 android:width="2dip"
-                android:color="#03ae3c" />
+                android:color="@android:color/holo_red_light" />
             <padding
                 android:bottom="4dp"
                 android:left="4dp"

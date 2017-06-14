@@ -126,6 +126,9 @@ public class Game extends AppCompatActivity {
         findViewById(R.id.roundGreen).setVisibility(View.GONE);
         findViewById(R.id.roundYellow).setVisibility(View.GONE);
         findViewById(R.id.bomb).setVisibility(View.GONE);
+        findViewById(R.id.coins).setVisibility(View.GONE);
+        findViewById(R.id.heal).setVisibility(View.GONE);
+
 
         findViewById(R.id.endTitle).setVisibility(View.VISIBLE);
 
@@ -169,26 +172,6 @@ public class Game extends AppCompatActivity {
 
 
 
-    class Timer extends CountDownTimer{
-
-        ProgressBar hpBar ;
-
-        public Timer(long millisInFuture, long countDownInterval, ProgressBar hp) {
-            super(millisInFuture, countDownInterval);
-            hpBar=hp;
-        }
-
-        public void onTick(long millisUntilFinished) {
-            hpBar.setProgress(hpBar.getProgress()-new Vars().getReduceHpPerTick());
-            if(hpBar.getProgress()==0){
-                endOfGame();
-
-            }
-        }
-        public void onFinish() {
-
-        }
-    }
 
     protected Dialog onCreateDialog (int id)
     {

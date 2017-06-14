@@ -16,6 +16,7 @@ public class Settings {
     private static int  coinsToRedDPB=5;
     private static int  coinsToUpCPC=10;
 
+
     public Settings() {
 
     }
