@@ -2,7 +2,7 @@ package com.example.user.clicker1;
 
 public class Vars {
     private static int clicked=1;
-    private static int coins=0;
+    private static int coins=27;
     private static int maxTaps=0;
     private static int maxPops=0;
     private static int maxNuberOfTapToDestroy=4;

@@ -12,6 +12,10 @@ public class Settings {
 
     private static int coins = 0;
 
+    private static int  coinsToUpCPT=1;
+    private static int  coinsToRedDPB=5;
+    private static int  coinsToUpCPC=10;
+
     public Settings() {
 
     }
@@ -50,4 +54,27 @@ public class Settings {
         editor.apply();
     }
 
+    public static void setCoinsToRedDPB(int coinsToRedDPB) {
+        Settings.coinsToRedDPB = coinsToRedDPB;
+    }
+
+    public static int getCoinsToRedDPB() {
+        return coinsToRedDPB;
+    }
+
+    public static void setCoinsToUpCPC(int coinsToUpCPC) {
+        Settings.coinsToUpCPC = coinsToUpCPC;
+    }
+
+    public static int getCoinsToUpCPC() {
+        return coinsToUpCPC;
+    }
+
+    public static void setCoinsToUpCPT(int coinsToUpCPT) {
+        Settings.coinsToUpCPT = coinsToUpCPT;
+    }
+
+    public static int getCoinsToUpCPT() {
+        return coinsToUpCPT;
+    }
 }

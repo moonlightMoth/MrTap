@@ -24,6 +24,7 @@ public class Shop extends AppCompatActivity {
         scores.setText(Integer.toString(Settings.getCoins()));
 
 
+
         final Vars vars = new Vars();
 
 
@@ -38,8 +39,15 @@ public class Shop extends AppCompatActivity {
         findViewById(R.id.TapDmgAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vars.setNumOfClicksPerTap(vars.getNumOfClicksPerTap()+1);
-                amountDMGPerTap.setText(Integer.toString(vars.getNumOfClicksPerTap()));
+
+                if (Settings.getCoinsToUpCPT()<=Settings.getCoins()) {
+                    vars.setNumOfClicksPerTap(vars.getNumOfClicksPerTap() + 1);
+                    amountDMGPerTap.setText(Integer.toString(vars.getNumOfClicksPerTap()));
+                    Settings.setCoins(Settings.getCoins() - Settings.getCoinsToUpCPT());
+                    TextView scores = (TextView) findViewById(R.id.textView);
+                    Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+                    scores.setText(Integer.toString(Settings.getCoins()));
+                }
             }
         });
 
@@ -50,8 +58,14 @@ public class Shop extends AppCompatActivity {
         findViewById(R.id.bombDMGRed).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vars.setBombReduceMult(vars.getBombReduceMult()+0.1);
-                amountDMGPerBomb.setText(Integer.toString((int)Math.round(vars.getBombReduceMult()*10)));
+                if (Settings.getCoinsToRedDPB()<=Settings.getCoins()) {
+                    vars.setBombReduceMult(vars.getBombReduceMult() + 0.1);
+                    amountDMGPerBomb.setText(Integer.toString((int) Math.round(vars.getBombReduceMult() * 10)));
+                    Settings.setCoins(Settings.getCoins() - Settings.getCoinsToRedDPB());
+                    TextView scores = (TextView) findViewById(R.id.textView);
+                    Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+                    scores.setText(Integer.toString(Settings.getCoins()));
+                }
             }
         });
 
@@ -62,8 +76,14 @@ public class Shop extends AppCompatActivity {
         findViewById(R.id.CPCAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vars.setCPC(vars.getCPC()+1);
-                amountCPC.setText(Integer.toString(vars.getCPC()));
+                if(Settings.getCoinsToUpCPC()<=Settings.getCoins()) {
+                    vars.setCPC(vars.getCPC() + 1);
+                    amountCPC.setText(Integer.toString(vars.getCPC()));
+                    Settings.setCoins(Settings.getCoins() - Settings.getCoinsToUpCPC());
+                    TextView scores = (TextView) findViewById(R.id.textView);
+                    Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+                    scores.setText(Integer.toString(Settings.getCoins()));
+                }
             }
         });
 

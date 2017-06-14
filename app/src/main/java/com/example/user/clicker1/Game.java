@@ -24,6 +24,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Vars.setMaxPops(Settings.getRecord());
+        Vars.setMaxTaps(Settings.getTaps());
     }
 
     @Override
