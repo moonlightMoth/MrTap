@@ -89,6 +89,14 @@
         android:id="@+id/roundYellow"
         android:textSize="50sp" />
 
+    <com.example.user.clicker1.PublicButton
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/blue_button"
+        android:text=""
+        android:id="@+id/roundBlue"
+        android:textSize="50sp" />
+
 
     <com.example.user.clicker1.Bomb
         android:layout_width="60pt"
@@ -136,6 +144,7 @@
         android:text="+"
         android:textSize="60dp"
         android:textColor="#ff99cc00"/>
+
 
 
 

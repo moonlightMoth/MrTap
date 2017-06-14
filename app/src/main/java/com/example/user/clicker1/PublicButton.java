@@ -36,6 +36,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
     public void init(final int type,
                      final PublicButton gb,
                      final PublicButton yb,
+                     final PublicButton bb,
                      final TextView pops,
                      final TextView taps,
                      final ProgressBar hp,
@@ -56,9 +57,20 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
         int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
 
         int xx = new Random().nextInt(wid);
-        int yy = new Random().nextInt(hei);
-        setX(xx);
-        setY(yy);
+
+        int err=0;
+        while (err==0){
+            int yy = new Random().nextInt(hei);
+            if(yy>200){
+                setX(xx);
+                setY(yy);
+                err=1;
+                Log.d("widCoin",Integer.toString(xx));
+                Log.d("heiCoin",Integer.toString(yy));
+            }
+        }
+        err=0;
+
 
 
 
@@ -90,7 +102,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
                     setBoosterVision(coins,heal,hp);
 
-                    setButtVision(gb, yb,pops,taps,hp,bomb,coins,heal);
+                    setButtVision(gb, yb,bb,pops,taps,hp,bomb,coins,heal);
                 }
             }
 
@@ -99,6 +111,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
     public void setButtVision(PublicButton gb,
                               PublicButton yb,
+                              PublicButton bb,
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
@@ -110,8 +123,9 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         switch(rand)
         {
-            case 1:  gb.init(rand,gb,yb,pops,taps,hp,bomb,coins,heal); break;
-            case 2:  yb.init(rand,gb,yb,pops,taps,hp,bomb,coins,heal); break;
+            case 1:  gb.init(rand,gb,yb,bb,pops,taps,hp,bomb,coins,heal); break;
+            case 2:  yb.init(rand,gb,yb,bb,pops,taps,hp,bomb,coins,heal); break;
+            case 3:  bb.init(rand,gb,yb,bb,pops,taps,hp,bomb,coins,heal); break;
         }
 
     }

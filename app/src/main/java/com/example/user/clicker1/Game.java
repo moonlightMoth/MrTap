@@ -75,6 +75,7 @@ public class Game extends AppCompatActivity {
 
         final PublicButton greenButton = (PublicButton) findViewById(R.id.roundGreen);
         final PublicButton yellowButton = (PublicButton) findViewById(R.id.roundYellow);
+        final PublicButton blueButton = (PublicButton) findViewById(R.id.roundBlue);
         final TextView popsField = (TextView) findViewById(R.id.pops);
         final TextView tapsField = (TextView) findViewById(R.id.taps);
         final ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
@@ -97,13 +98,14 @@ public class Game extends AppCompatActivity {
         });
 
 
-        setButtVision(greenButton,yellowButton,popsField,tapsField, bar,bomb,coins,heal);
+        setButtVision(greenButton,yellowButton,blueButton,popsField,tapsField, bar,bomb,coins,heal);
 
 
     }
 
     public void setButtVision(PublicButton gb,
                               PublicButton yb,
+                              PublicButton bb,
                               TextView pops,
                               TextView taps,
                               ProgressBar hp,
@@ -115,8 +117,9 @@ public class Game extends AppCompatActivity {
 
         switch(rand)
         {
-            case 1:  gb.init(rand, gb, yb, pops, taps, hp,bomb, coins, heal); break;
-            case 2:  yb.init(rand, gb, yb, pops, taps, hp,bomb, coins, heal); break;
+            case 1:  gb.init(rand, gb, yb, bb, pops, taps, hp, bomb, coins, heal); break;
+            case 2:  yb.init(rand, gb, yb, bb, pops, taps, hp, bomb, coins, heal); break;
+            case 3:  bb.init(rand, gb, yb, bb, pops, taps, hp, bomb, coins, heal); break;
         }
 
     }
@@ -125,6 +128,7 @@ public class Game extends AppCompatActivity {
         Vars vars = new Vars();
         findViewById(R.id.roundGreen).setVisibility(View.GONE);
         findViewById(R.id.roundYellow).setVisibility(View.GONE);
+        findViewById(R.id.roundBlue).setVisibility(View.GONE);
         findViewById(R.id.bomb).setVisibility(View.GONE);
         findViewById(R.id.coins).setVisibility(View.GONE);
         findViewById(R.id.heal).setVisibility(View.GONE);

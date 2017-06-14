@@ -6,7 +6,7 @@
             <solid android:color="#000000" />
             <stroke
                 android:width="10dip"
-                android:color="#ffff00" />
+                android:color="#FFD700" />
             <padding
                 android:bottom="1dp"
                 android:left="1dp"
@@ -17,10 +17,10 @@
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="100pt" />
-            <solid android:color="#ffff00" />
+            <solid android:color="#FFD700" />
             <stroke
                 android:width="2dip"
-                android:color="#ffff00" />
+                android:color="#FFD700" />
             <padding
                 android:bottom="1dp"
                 android:left="1dp"

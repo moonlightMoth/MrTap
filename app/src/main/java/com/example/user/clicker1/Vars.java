@@ -10,7 +10,7 @@ public class Vars {
     private static int numOfClicksPerTap=1;
     private static int dispalyHeight=0;
     private static int dispalyWidth=0;
-    private static int numOfRandObjects=2;
+    private static int numOfRandObjects=3;
     private static int pops=0;
     private static int taps=0;
     private static int reduceHpPerTick = 2;
