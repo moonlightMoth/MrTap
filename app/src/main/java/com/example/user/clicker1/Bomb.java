@@ -52,7 +52,7 @@ public class Bomb extends AppCompatButton {
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                hp.setProgress(hp.getProgress()/2);
+                hp.setProgress((int)(hp.getProgress() * new Vars().getBombReduceMult()));
                 setVisibility(View.GONE);
 
             }

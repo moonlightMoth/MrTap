@@ -55,20 +55,12 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
         int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
         int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
 
+        int xx = new Random().nextInt(wid);
+        int yy = new Random().nextInt(hei);
+        setX(xx);
+        setY(yy);
 
-        int err=0;
-        while (err==0){
-            int xx = new Random().nextInt(wid);
-            int yy = new Random().nextInt(hei);
-            if( Math.abs(yy-vars.getY())>300){
-                setX(xx);
-                setY(yy);
-                err=1;
-                Log.d("widBomb",Integer.toString(xx));
-                Log.d("heiBomb",Integer.toString(yy));
-            }
-        }
-        err=0;
+
 
         setOnClickListener(new OnClickListener() {
             @Override
@@ -131,8 +123,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         switch (rand)
         {
-            case 7: createBomb(bomb,hp); break;
-            case 4: createBomb(bomb,hp); break;
+            case 3: createBomb(bomb,hp); break;
+            case 6: createBomb(bomb,hp); break;
         }
     }
 

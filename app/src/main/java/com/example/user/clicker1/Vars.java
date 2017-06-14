@@ -22,6 +22,7 @@ public class Vars {
     private static int bombChance=10;
     private static int boosterChance=20;
     private static int healPerHealCircle=10;
+    private static double bombReduceMult = 0.5;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -173,5 +174,13 @@ public class Vars {
 
     public static int getHealPerHealCircle() {
         return healPerHealCircle;
+    }
+
+    public static void setBombReduceMult(double bombReduceMult) {
+        Vars.bombReduceMult = bombReduceMult;
+    }
+
+    public static double getBombReduceMult() {
+        return bombReduceMult;
     }
 }

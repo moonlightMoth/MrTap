@@ -71,7 +71,7 @@ public class Game extends AppCompatActivity {
                               TextView taps,
                               ProgressBar hp,
                               Bomb bomb,
-                                Coins coins,
+                              Coins coins,
                               Heal heal){
         int rand;
         rand=new Random().nextInt(new Vars().getNumOfRandObjects())+1;
