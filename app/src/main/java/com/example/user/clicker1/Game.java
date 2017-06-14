@@ -23,6 +23,7 @@ public class Game extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        Vars.setMaxPops(Settings.getRecord());
     }
 
     @Override
@@ -32,8 +33,6 @@ public class Game extends AppCompatActivity {
 
         Vars vars = new Vars();
 
-        vars.setPops(0);
-        vars.setTaps(0);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
 
@@ -118,7 +117,7 @@ public class Game extends AppCompatActivity {
         });
 
 
-        if (Vars.getPops()>Settings.getRecord()) Vars.setMaxPops(Vars.getPops());
+        if (Vars.getPops()>vars.getMaxPops()) Vars.setMaxPops(Vars.getPops());
 
         vars.setMaxTaps(vars.getMaxTaps()+vars.getTaps());
 
