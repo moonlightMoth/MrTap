@@ -22,7 +22,16 @@ public class Vars {
     private static int bombChance=10;
     private static int boosterChance=20;
     private static int healPerHealCircle=100;
-    private static double bombReduceMult = 1.0;
+    private static double bombReduceMult = 0.1;
+    private static int CPC=1;
+
+    public static void setCPC(int CPC) {
+        Vars.CPC = CPC;
+    }
+
+    public static int getCPC() {
+        return CPC;
+    }
 
     public void setClicked(int clicked) {
         this.clicked = clicked;

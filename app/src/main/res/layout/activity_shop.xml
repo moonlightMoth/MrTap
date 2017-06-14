@@ -45,6 +45,13 @@
             android:textColor="#FFFFFF"
             android:textSize="40sp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="40sp"
+            android:id="@+id/amountDMGPerTap"/>
+
         <Button
             android:id="@+id/TapDmgAdd"
             android:layout_width="wrap_content"
@@ -70,6 +77,12 @@
             android:layout_weight="1"
             android:textColor="#FFFFFF"
             android:textSize="40sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="40sp"
+            android:id="@+id/amountDMGPerBomb"/>
 
         <Button
             android:id="@+id/bombDMGRed"
