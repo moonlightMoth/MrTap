@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".Game"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100"
+            android:scaleY="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pops: "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:id="@+id/pops"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="taps: "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:id="@+id/taps"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="346dp"
+        android:textColor="#FE6767"
+        android:textSize="120sp"
+        android:text="Game Over"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:id="@+id/endTitle"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
+
+    <com.example.user.clicker1.PublicButton
+
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/green_button"
+        android:text=""
+        android:id="@+id/roundGreen"
+        android:textSize="50sp" />
+
+    <com.example.user.clicker1.PublicButton
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/yellow_button"
+        android:text=""
+        android:id="@+id/roundYellow"
+        android:textSize="50sp" />
+
+
+    <com.example.user.clicker1.Bomb
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/bomb_states"
+        android:id="@+id/bomb"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/toMenu"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button2"
+        android:layout_below="@+id/endTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="MAIN MENU"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/Restart"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button3"
+        android:layout_alignEnd="@+id/toMenu"
+        android:layout_below="@+id/toMenu"
+        android:layout_marginTop="11dp"
+        android:text="RESTART"
+        android:visibility="gone"/>
+
+    <com.example.user.clicker1.Coins
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/coins_states"
+        android:id="@+id/coins"
+        android:visibility="gone"/>
+
+
+    <com.example.user.clicker1.Heal
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/heal_states"
+        android:id="@+id/heal"
+        android:visibility="gone"
+        android:text="+"
+        android:textSize="60dp"
+        android:textColor="#ff99cc00"/>
+
+
+</RelativeLayout>

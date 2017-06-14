@@ -1,6 +1,5 @@
 package com.example.user.clicker1;
 
-
 public class Vars {
     private static int clicked=1;
     private static int coins=0;
@@ -17,7 +16,12 @@ public class Vars {
     private static int reduceHpPerTick = 1;
     private static int addHpPerPop=0;
     private static int addHpPerTap=1;
-
+    private static int highscore=0;
+    private static int X;
+    private static int Y;
+    private static int bombChance=10;
+    private static int boosterChance=20;
+    private static int healPerHealCircle=10;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -27,11 +31,11 @@ public class Vars {
         return clicked;
     }
 
-    public void setCoins(int coins) {
-        this.coins = coins;
+    public static void setCoins(int money) {
+        coins = money;
     }
 
-    public int getCoins() {
+    public static int getCoins() {
         return coins;
     }
 
@@ -70,6 +74,10 @@ public class Vars {
     public static void setNumOfClicksPerTap(int numOfClicksPerTap) {
         Vars.numOfClicksPerTap = numOfClicksPerTap;
     }
+    public static int getX(){return X;}
+    public static int getY(){return Y;}
+    public void setX(int XX){this.X=XX;}
+    public void setY(int YY){this.Y=YY;}
 
     public static int getNumOfClicksPerTap() {
         return numOfClicksPerTap;
@@ -137,5 +145,33 @@ public class Vars {
 
     public static int getAddHpPerTap() {
         return addHpPerTap;
+    }
+
+    public  static void setHighscore(int highscore){Vars.highscore=highscore;}
+
+    public static int getHighscore(){return highscore;}
+
+    public static void setBombChance(int bombCance) {
+        Vars.bombChance = bombChance;
+    }
+
+    public static int getBombChance() {
+        return bombChance;
+    }
+
+    public static void setBoosterChance(int boosterChance) {
+        Vars.boosterChance = boosterChance;
+    }
+
+    public static int getBoosterChance() {
+        return boosterChance;
+    }
+
+    public static void setHealPerHealCircle(int healPerHealCircle) {
+        Vars.healPerHealCircle = healPerHealCircle;
+    }
+
+    public static int getHealPerHealCircle() {
+        return healPerHealCircle;
     }
 }

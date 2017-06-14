@@ -1,89 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.user.clicker1.MainActivity"
-    android:background="@color/colorPrimary"
-    >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button1"
+        android:text="Start"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/button1"
+        android:layout_alignStart="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/button2"
+        android:text="Shop"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="normal" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="100"
-            android:scaleY="4"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pops: "
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:id="@+id/pops"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="taps: "
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:id="@+id/taps"/>
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/button1"
+        android:layout_alignStart="@+id/button1"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/button3"
+        android:text="Rate"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="normal" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="#FE6767"
-        android:textSize="120sp"
-        android:text="Game Over"
-        android:gravity="center"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Highscore:"
+        android:textIsSelectable="false"
         android:textStyle="bold"
-        android:visibility="gone"
-        android:id="@+id/endTitle"
-        />
+        android:textSize="24sp" />
 
-    <com.example.user.clicker1.PublicButton
+    <TextView
+        android:id="@+id/textView3"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toLeftOf="@+id/textView5"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:text="Taps:"
+        android:textStyle="bold"
+        android:textSize="24sp" />
 
-        android:layout_width="60pt"
-        android:layout_height="60pt"
-        android:background="@drawable/green_button_states"
-        android:text=""
-        android:id="@+id/roundGreen"
-        android:textSize="50sp" />
+    <TextView
+        android:id="@+id/textView4"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:text="47"
+        android:layout_toRightOf="@+id/textView2"
+        android:textStyle="bold"
+        android:textSize="24sp" />
 
-    <com.example.user.clicker1.PublicButton
-        android:layout_width="60pt"
-        android:layout_height="60pt"
-        android:background="@drawable/yellow_button_states"
-        android:text=""
-        android:id="@+id/roundYellow"
-        android:textSize="50sp" />
+    <TextView
+        android:id="@+id/textView5"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:text="999"
+        android:textStyle="bold"
+        android:textSize="24sp" />
 
+    <ImageView
+        android:src="@drawable/imagemainmenu"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true" />
 
-    <com.example.user.clicker1.Bomb
-        android:layout_width="60pt"
-        android:layout_height="60pt"
-        android:background="@drawable/bomb_states"
-        android:id="@+id/bomb"
-        android:visibility="gone"/>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -9,27 +9,25 @@ import android.widget.ProgressBar;
 
 import java.util.Random;
 
-
-public class Bomb extends AppCompatButton {
-    public Bomb(Context context) {
+public class Coins extends AppCompatButton {
+    public Coins(Context context) {
         super(context);
     }
 
-    public Bomb(Context context, AttributeSet attrs) {
+    public Coins(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public Bomb(Context context, AttributeSet attrs, int defStyleAttr) {
+    public Coins(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public void init(final ProgressBar hp){
+    public void init(){
 
         final Vars vars = new Vars();
 
         int wid=(int)Math.round(vars.getDispalyWidth()/1.5);
         int hei=(int)Math.round(vars.getDispalyHeight()/1.5);
-
 
         int err=0;
         while (err==0){
@@ -39,25 +37,21 @@ public class Bomb extends AppCompatButton {
                 setX(xx);
                 setY(yy);
                 err=1;
-                Log.d("widBomb",Integer.toString(xx));
-                Log.d("heiBomb",Integer.toString(yy));
+                Log.d("widCoin",Integer.toString(xx));
+                Log.d("heiCoin",Integer.toString(yy));
             }
         }
         err=0;
-
-
 
         setVisibility(View.VISIBLE);
 
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                hp.setProgress(hp.getProgress()/2);
-                setVisibility(View.GONE);
-
+                vars.setCoins(vars.getCoins()+1);
+                setVisibility(GONE);
             }
         });
     }
-
 
 }
