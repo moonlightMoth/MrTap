@@ -47,5 +47,18 @@ public class Shop extends AppCompatActivity {
                 amountDMGPerBomb.setText(Integer.toString((int)Math.round(vars.getBombReduceMult()*10)));
             }
         });
+
+        final TextView amountCPC = (TextView) findViewById(R.id.amountCPC);
+
+        amountCPC.setText(Integer.toString(vars.getCPC()));
+
+        findViewById(R.id.CPCAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vars.setCPC(vars.getCPC()+1);
+                amountCPC.setText(Integer.toString(vars.getCPC()));
+            }
+        });
+
     }
 }
