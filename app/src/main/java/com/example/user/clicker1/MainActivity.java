@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(llog,"App started");
 
         //достать рекорд
-        TextView highscoree=(TextView)findViewById(R.id.textView4);
+        TextView highscoree=(TextView)findViewById(R.id.point47);
         Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
         highscoree.setText(Integer.toString(Settings.getRecord()));
 
 
-        TextView taps=(TextView)findViewById(R.id.textView5);
+        TextView taps=(TextView)findViewById(R.id.point999);
         Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
         taps.setText(Integer.toString(Settings.getTaps()));
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.imagemainmenu);
 
-        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.start_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(this_, Game.class);
@@ -45,12 +45,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.shop_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(this_, Shop.class);
                 startActivity(intent);
                 Log.d(llog,"Gone to Shop");
+            }
+        });
+
+        findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Settings.setTaps(0);
+//                Settings.setRecord(0);
+//                TextView p47 = (TextView)findViewById(R.id.point47);
+//                TextView p999 = (TextView)findViewById(R.id.point999);
+//                p47.setText(Integer.toString(Settings.getRecord()));
+//                p999.setText(Integer.toString(Settings.getTaps()));
             }
         });
 
@@ -72,10 +84,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(llog,"MainMenu resumed");
 
         //установить рекорд
-        TextView highscoree=(TextView)findViewById(R.id.textView4);
+        TextView highscoree=(TextView)findViewById(R.id.point47);
         highscoree.setText(Integer.toString(Settings.getRecord()));
 
-        TextView taps=(TextView)findViewById(R.id.textView5);
+        TextView taps=(TextView)findViewById(R.id.point999);
         taps.setText(Integer.toString(Settings.getTaps()));
 
     }
