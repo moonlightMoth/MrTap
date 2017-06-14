@@ -26,15 +26,22 @@ public class Game extends AppCompatActivity {
         @Override
         public void onTick(long millisUntilFinished) {
             ProgressBar a=(ProgressBar)findViewById(R.id.progressBar);
-            a.setProgress(a.getProgress()-1);
-            if (a.getProgress()<=0) endOfGame();
+            a.setProgress(a.getProgress()-Vars.getReduceHpPerTick());
+            if (a.getProgress()<=0) {
+
+                endOfGame();
+            }
         }
 
         @Override
         public void onFinish() {
 
         }
+
+
+
     };
+
     final Game this_=this;
     final int DIALOG_EXIT=1;
 
@@ -147,13 +154,12 @@ public class Game extends AppCompatActivity {
 
         if (Vars.getPops()>vars.getMaxPops()) Vars.setMaxPops(Vars.getPops());
 
-        vars.setMaxTaps(vars.getMaxTaps()+vars.getTaps());
+        if (Vars.getTaps()>vars.getMaxTaps()) Vars.setMaxTaps(Vars.getTaps());
 
         Settings.setRecord(Vars.getMaxPops());
         Settings.setTaps(Vars.getMaxTaps());
 
-        vars.setPops(0);
-        vars.setTaps(0);
+
 
     }
 
@@ -176,6 +182,7 @@ public class Game extends AppCompatActivity {
             hpBar.setProgress(hpBar.getProgress()-new Vars().getReduceHpPerTick());
             if(hpBar.getProgress()==0){
                 endOfGame();
+
             }
         }
         public void onFinish() {

@@ -140,8 +140,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
         switch (rand)
         {
-            case 7: createCoins(coins); break;
-            case 4: createHeal(heal,hp); break;
+            case 6: createCoins(coins); break;
+            case 3: createHeal(heal,hp); break;
         }
     }
 
