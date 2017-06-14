@@ -48,21 +48,22 @@ public class Vars {
         return maxNuberOfTapToDestroy;
     }
 
-    public void setMaxPops(int maxPops) {
-        this.maxPops = maxPops;
-    }
+    public static void setMaxPops(int maxP) {maxPops = maxP;}
 
-    public int getMaxPops() {
+    public static int getMaxPops() {
         return maxPops;
     }
 
-    public void setMaxTaps(int maxTaps) {
-        this.maxTaps = maxTaps;
+
+
+    public static void setMaxTaps(int maxT) {
+        maxTaps = maxT;
     }
 
-    public int getMaxTaps() {
+    public static int getMaxTaps() {
         return maxTaps;
     }
+
 
     public void setMinNuberOfTapToDestroy(int minNuberOfTapToDestroy) {
         this.minNuberOfTapToDestroy = minNuberOfTapToDestroy;

@@ -1,6 +1,7 @@
 package com.example.user.clicker1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,8 +22,17 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(llog,"App started");
 
+        //достать рекорд
         TextView highscoree=(TextView)findViewById(R.id.textView4);
-        highscoree.setText(Integer.toString(Vars.getHighscore()));
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+        highscoree.setText(Integer.toString(Settings.getRecord()));
+
+
+        TextView taps=(TextView)findViewById(R.id.textView5);
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+        taps.setText(Integer.toString(Settings.getTaps()));
+
+
         ImageView imageView = (ImageView)findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.imagemainmenu);
 
@@ -59,8 +69,14 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onResume(){
         super.onResume();
-        TextView highscoree=(TextView)findViewById(R.id.textView4);
-        highscoree.setText(Integer.toString(Vars.getHighscore()));
         Log.d(llog,"MainMenu resumed");
+
+        //установить рекорд
+        TextView highscoree=(TextView)findViewById(R.id.textView4);
+        highscoree.setText(Integer.toString(Settings.getRecord()));
+
+        TextView taps=(TextView)findViewById(R.id.textView5);
+        taps.setText(Integer.toString(Settings.getTaps()));
+
     }
 }

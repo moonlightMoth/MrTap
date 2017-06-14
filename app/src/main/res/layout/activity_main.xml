@@ -43,7 +43,7 @@
         android:layout_below="@+id/button2"
         android:layout_marginTop="11dp"
         android:background="@drawable/button3"
-        android:text="Rate"
+        android:text="scores"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="normal" />

@@ -117,13 +117,12 @@ public class Game extends AppCompatActivity {
         });
 
 
-        if (Vars.getPops()>vars.getHighscore()) Vars.setHighscore(Vars.getPops());
+        if (Vars.getPops()>vars.getMaxPops()) Vars.setMaxPops(Vars.getPops());
 
-        if(vars.getMaxPops()< vars.getPops())
-            vars.setMaxPops(vars.getPops());
-        if(vars.getMaxTaps()< vars.getTaps())
-            vars.setMaxTaps(vars.getTaps());
+        vars.setMaxTaps(vars.getMaxTaps()+vars.getTaps());
 
+        Settings.setRecord(Vars.getMaxPops());
+        Settings.setTaps(Vars.getMaxTaps());
 
         vars.setPops(0);
         vars.setTaps(0);
