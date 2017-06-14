@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,52 +12,99 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
         android:text="3333"
         android:textColor="@android:color/holo_red_light"
-        android:textSize="30pt"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true" />
+        android:textSize="30pt" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
-        android:text="Coins:"
-        android:textSize="15pt"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Coins:"
+        android:textColor="@android:color/white"
+        android:textSize="15pt" />
 
-    <Button
-        android:id="@+id/appClickPerTap2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/BesheniyEvrey1Parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:text="+2 clicks\n per tap"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/button_shop"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="41dp" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView">
 
-    <Button
-        android:id="@+id/appClickPerTapNormal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 click\n per tap"
-        android:background="@drawable/button_shop"
-        android:layout_marginLeft="20dp"
-        android:layout_alignBottom="@+id/appClickPerTap1"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/BesheniyEvrey1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DMG per tap"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
 
-    <Button
-        android:id="@+id/appClickPerTap1"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/TapDmgAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_shop"
+            android:text="+1"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/BesheniyEvrey2Parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="+1 clicks\n per tap"
-        android:background="@drawable/button_shop"
-        android:layout_alignTop="@+id/appClickPerTap2"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/BesheniyEvrey1Parent">
+
+        <TextView
+            android:id="@+id/BesheniyEvrey2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bomb DMG"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/bombDMGRed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_shop"
+            android:text="+1"
+            android:textSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/BesheniyEvrey2Parent">
+
+        <TextView
+            android:id="@+id/BesheniyEvrey3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coins per coin"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/CPCAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/button_shop"
+            android:text="+1"
+            android:textSize="30sp" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

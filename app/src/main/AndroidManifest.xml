@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".Game" />
         <activity android:name=".Shop" />
-        <activity android:name=".ScoresActivity"></activity>
     </application>
 
 </manifest>

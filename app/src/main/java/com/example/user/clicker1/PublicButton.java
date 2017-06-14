@@ -77,7 +77,7 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                 if (vars.getClicked()<=0)
                 {
                     vars.setPops(vars.getPops()+1);
-                   // hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
+                    hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
                     pops.setText("pops: " + vars.getPops());
                     //vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
                     //vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);

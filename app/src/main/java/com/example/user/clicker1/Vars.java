@@ -13,16 +13,16 @@ public class Vars {
     private static int numOfRandObjects=2;
     private static int pops=0;
     private static int taps=0;
-    private static int reduceHpPerTick = 1;
-    private static int addHpPerPop=0;
-    private static int addHpPerTap=1;
+    private static int reduceHpPerTick = 2;
+    private static int addHpPerPop=20;
+    private static int addHpPerTap=10;
     private static int highscore=0;
     private static int X;
     private static int Y;
     private static int bombChance=10;
     private static int boosterChance=20;
-    private static int healPerHealCircle=10;
-    private static double bombReduceMult = 0.5;
+    private static int healPerHealCircle=100;
+    private static double bombReduceMult = 1.0;
 
     public void setClicked(int clicked) {
         this.clicked = clicked;

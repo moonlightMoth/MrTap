@@ -55,8 +55,10 @@ public class Game extends AppCompatActivity {
         final Coins coins = (Coins) findViewById(R.id.coins);
         final Heal heal = (Heal) findViewById(R.id.heal);
 
+        bar.setProgress(1000);
 
-        new Timer(Integer.MAX_VALUE, 200, bar).start();
+
+        new Timer(Integer.MAX_VALUE, 5, bar).start();
 
 
 
@@ -145,7 +147,7 @@ public class Game extends AppCompatActivity {
         }
 
         public void onTick(long millisUntilFinished) {
-            hpBar.setProgress(hpBar.getProgress()-1);
+            hpBar.setProgress(hpBar.getProgress()-new Vars().getReduceHpPerTick());
             if(hpBar.getProgress()==0){
                 endOfGame();
             }
