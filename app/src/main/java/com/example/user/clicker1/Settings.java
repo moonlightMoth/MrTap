@@ -39,4 +39,15 @@ public class Settings {
         editor.putInt("taps", newTaps);
         editor.apply();
     }
+
+    public static int getCoins() {
+        return settings.sharedPreferences.getInt("coins", coins);
+    }
+
+    public static void setCoins(int newCoins) {
+        SharedPreferences.Editor editor = settings.sharedPreferences.edit();
+        editor.putInt("coins", newCoins);
+        editor.apply();
+    }
+
 }

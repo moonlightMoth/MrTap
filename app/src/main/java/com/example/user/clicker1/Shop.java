@@ -1,5 +1,6 @@
 package com.example.user.clicker1;
 
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.RequiresApi;
@@ -15,6 +16,12 @@ public class Shop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+
+
+        TextView scores=(TextView)findViewById(R.id.textView);
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+        scores.setText(Integer.toString(Settings.getCoins()));
 
 
         final Vars vars = new Vars();
@@ -59,6 +66,18 @@ public class Shop extends AppCompatActivity {
                 amountCPC.setText(Integer.toString(vars.getCPC()));
             }
         });
+
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+
+        TextView scores=(TextView)findViewById(R.id.textView);
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+        scores.setText(Integer.toString(Settings.getCoins()));
+
 
     }
 }

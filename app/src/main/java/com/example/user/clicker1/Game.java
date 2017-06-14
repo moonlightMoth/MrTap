@@ -103,8 +103,7 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(this_,MainActivity.class);
-
-                startActivity(intent);
+                finish();
 
             }
         });
@@ -119,7 +118,7 @@ public class Game extends AppCompatActivity {
         });
 
 
-        if (Vars.getPops()>vars.getMaxPops()) Vars.setMaxPops(Vars.getPops());
+        if (Vars.getPops()>Settings.getRecord()) Vars.setMaxPops(Vars.getPops());
 
         vars.setMaxTaps(vars.getMaxTaps()+vars.getTaps());
 
