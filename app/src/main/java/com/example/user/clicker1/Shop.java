@@ -17,7 +17,9 @@ public class Shop extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
-
+        final TextView CPCcost=(TextView)findViewById(R.id.CPCcost);
+        final TextView CPTcost=(TextView)findViewById(R.id.CPTcost);
+        final TextView DMGcost=(TextView)findViewById(R.id.DMGcost);
 
         TextView scores=(TextView)findViewById(R.id.textView);
         Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
@@ -27,9 +29,7 @@ public class Shop extends AppCompatActivity {
 
         final Vars vars = new Vars();
 
-        final TextView CPCcost=(TextView)findViewById(R.id.CPCcost);
-        final TextView CPTcost=(TextView)findViewById(R.id.CPTcost);
-        final TextView DMGcost=(TextView)findViewById(R.id.DMGcost);
+
 
 
         final TextView amount = (TextView) findViewById(R.id.textView);
