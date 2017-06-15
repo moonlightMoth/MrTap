@@ -6,7 +6,8 @@
     android:background="@android:color/black"
     android:orientation="vertical"
     tools:context=".Game"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative">
 
     <LinearLayout
         android:layout_width="match_parent"

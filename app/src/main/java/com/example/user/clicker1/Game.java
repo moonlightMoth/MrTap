@@ -10,12 +10,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -82,6 +84,14 @@ public class Game extends AppCompatActivity {
         final Bomb bomb = (Bomb) findViewById(R.id.bomb);
         final Coins coins = (Coins) findViewById(R.id.coins);
         final Heal heal = (Heal) findViewById(R.id.heal);
+        final RelativeLayout relative = (RelativeLayout)findViewById(R.id.relative);
+
+        relative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bar.setProgress(bar.getProgress()-50);
+            }
+        });
 
         bar.setProgress(1000);
 
