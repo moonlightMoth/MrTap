@@ -78,9 +78,16 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
             @Override
             public void onClick(View v) {
 
+
+                if (vars.getClicked()>=vars.getNumOfClicksPerTap())
+                    vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
+                else
+                    vars.setTaps(vars.getTaps()+vars.getClicked());
+
+
                 vars.setClicked(vars.getClicked()-vars.getNumOfClicksPerTap());
                 setText(Integer.toString(vars.getClicked()));
-                vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
+
                 taps.setText("taps: " + vars.getTaps());
                 hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
 
