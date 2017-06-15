@@ -105,11 +105,20 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                     coins.setVisibility(View.GONE);
                     heal.setVisibility(View.GONE);
 
-                    setBombVision(bomb,hp);
+                    if(vars.getPops()%10==0)
+                    {
+                        setButtVision(gb, yb,bb,pops,taps,hp,bomb,coins,heal);
+                        createCoins(coins);
+                    }
+                    else {
+                        setBombVision(bomb, hp);
 
-                    setBoosterVision(coins,heal,hp);
+                        setBoosterVision(coins, heal, hp);
 
-                    setButtVision(gb, yb,bb,pops,taps,hp,bomb,coins,heal);
+                        setButtVision(gb, yb, bb, pops, taps, hp, bomb, coins, heal);
+                    }
+
+
                 }
             }
 
