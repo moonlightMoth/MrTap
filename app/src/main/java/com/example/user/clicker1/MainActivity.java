@@ -57,12 +57,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Settings.setTaps(0);
-//                Settings.setRecord(0);
-//                TextView p47 = (TextView)findViewById(R.id.point47);
-//                TextView p999 = (TextView)findViewById(R.id.point999);
-//                p47.setText(Integer.toString(Settings.getRecord()));
-//                p999.setText(Integer.toString(Settings.getTaps()));
+                Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
+                Settings.setTaps(0);
+                Settings.setRecord(0);
+                TextView p47 = (TextView)findViewById(R.id.point47);
+                TextView p999 = (TextView)findViewById(R.id.point999);
+                p47.setText(Integer.toString(Settings.getRecord()));
+                p999.setText(Integer.toString(Settings.getTaps()));
+                Settings.setCPC(1);
+                Settings.setNumOfClicksPerTap(1);
+                Settings.setCoins(0);
+                Settings.setBombReduceMult(9);
+                Settings.setCoinsToRedDPB(5);
+                Settings.setCoinsToUpCPC(10);
+                Settings.setCoinsToUpCPT(1);
+                Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
             }
         });
 
@@ -76,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onDestroy(){
         super.onDestroy();
+
         Log.d(llog,"App sdoh nahui");
     }
 

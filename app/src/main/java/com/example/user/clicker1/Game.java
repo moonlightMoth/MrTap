@@ -176,8 +176,6 @@ public class Game extends AppCompatActivity {
         Settings.setRecord(Vars.getMaxPops());
         Settings.setTaps(Vars.getMaxTaps());
 
-
-
     }
 
     protected void onPause(){

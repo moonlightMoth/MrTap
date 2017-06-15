@@ -35,7 +35,7 @@
         android:textStyle="normal" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/reset"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_alignEnd="@+id/start_button"
@@ -43,7 +43,7 @@
         android:layout_below="@+id/shop_button"
         android:layout_marginTop="11dp"
         android:background="@drawable/button3"
-        android:text="SVETA"
+        android:text="reset"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="normal" />
@@ -61,14 +61,6 @@
         android:textIsSelectable="false"
         android:textStyle="bold"
         android:textSize="24sp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/highscore"
-        android:text="Reset Scores"
-        android:background="@drawable/reset_button"
-        android:id="@+id/reset"/>
 
     <TextView
         android:id="@+id/textView3"
