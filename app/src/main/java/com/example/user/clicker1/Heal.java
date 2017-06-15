@@ -50,7 +50,7 @@ public class Heal extends AppCompatButton {
             @Override
             public void onClick(View view) {
                 Vars vars = new Vars();
-                hp.setProgress(hp.getProgress()+vars.getHealPerHealCircle());
+                hp.setProgress(hp.getProgress()+Settings.getHealPerHealCircle());
                 setVisibility(GONE);
             }
         });

@@ -98,7 +98,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/BesheniyEvrey2Parent">
+        android:layout_below="@+id/BesheniyEvrey2Parent"
+        android:id="@+id/linearLayout2">
 
         <TextView
             android:id="@+id/BesheniyEvrey3"
@@ -125,6 +126,31 @@
             android:textSize="30sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/CPTcost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/DMGcost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CPTcost"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/CPCcost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/DMGcost"
+        android:layout_alignStart="@+id/DMGcost" />
 
 
 </RelativeLayout>

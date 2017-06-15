@@ -79,13 +79,13 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
             public void onClick(View v) {
 
 
-                if (vars.getClicked()>=vars.getNumOfClicksPerTap())
-                    vars.setTaps(vars.getTaps()+vars.getNumOfClicksPerTap());
+                if (vars.getClicked()>=Settings.getNumOfClicksPerTap())
+                    vars.setTaps(vars.getTaps()+Settings.getNumOfClicksPerTap());
                 else
                     vars.setTaps(vars.getTaps()+vars.getClicked());
 
 
-                vars.setClicked(vars.getClicked()-vars.getNumOfClicksPerTap());
+                vars.setClicked(vars.getClicked()-Settings.getNumOfClicksPerTap());
                 setText(Integer.toString(vars.getClicked()));
 
                 taps.setText("taps: " + vars.getTaps());

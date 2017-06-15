@@ -1,37 +1,37 @@
 package com.example.user.clicker1;
 
 public class Vars {
-    private static int clicked=1;
-    private static int coins=27;
-    private static int maxTaps=0;
-    private static int maxPops=0;
-    private static int maxNuberOfTapToDestroy=4;
-    private static int minNuberOfTapToDestroy=2;
-    private static int numOfClicksPerTap=1;
-    private static int dispalyHeight=0;
-    private static int dispalyWidth=0;
-    private static int numOfRandObjects=3;
-    private static int pops=0;
-    private static int taps=0;
+    private static int clicked = 1;
+    private static int coins = 27;
+    private static int maxTaps = 0;
+    private static int maxPops = 0;
+    private static int maxNuberOfTapToDestroy = 4;
+    private static int minNuberOfTapToDestroy = 2;
+    private static int dispalyHeight = 0;
+    private static int dispalyWidth = 0;
+    private static int numOfRandObjects = 3;
+    private static int pops = 0;
+    private static int taps = 0;
     private static int reduceHpPerTick = 2;
-    private static int addHpPerPop=20;
-    private static int addHpPerTap=10;
-    private static int highscore=0;
+    private static int addHpPerPop = 20;
+    private static int addHpPerTap = 10;
+    private static int highscore = 0;
     private static int X;
     private static int Y;
-    private static int bombChance=10;
-    private static int boosterChance=20;
-    private static int healPerHealCircle=100;
-    private static double bombReduceMult = 0.1;
-    private static int CPC=1;
+    private static int bombChance = 10;
+    private static int boosterChance = 20;
+    private static double bombDMG=0.1;
 
-    public static void setCPC(int CPC) {
-        Vars.CPC = CPC;
-    }
+//    private static int CoinsInThisRun=0;
 
-    public static int getCPC() {
-        return CPC;
-    }
+//    public static void setCoinsInThisRun (int CIR) {Vars.CoinsInThisRun=CIR;}
+//
+//    public static int getCoinsInThisRun () {return CoinsInThisRun;}
+
+
+    public static void setBombDMG(Double DMG){bombDMG=DMG;}
+    public static Double getBombDMG(){return bombDMG;}
+
 
     public void setClicked(int clicked) {
         this.clicked = clicked;
@@ -57,12 +57,13 @@ public class Vars {
         return maxNuberOfTapToDestroy;
     }
 
-    public static void setMaxPops(int maxP) {maxPops = maxP;}
+    public static void setMaxPops(int maxP) {
+        maxPops = maxP;
+    }
 
     public static int getMaxPops() {
         return maxPops;
     }
-
 
 
     public static void setMaxTaps(int maxT) {
@@ -82,17 +83,23 @@ public class Vars {
         return minNuberOfTapToDestroy;
     }
 
-    public static void setNumOfClicksPerTap(int numOfClicksPerTap) {
-        Vars.numOfClicksPerTap = numOfClicksPerTap;
-    }
-    public static int getX(){return X;}
-    public static int getY(){return Y;}
-    public void setX(int XX){this.X=XX;}
-    public void setY(int YY){this.Y=YY;}
 
-    public static int getNumOfClicksPerTap() {
-        return numOfClicksPerTap;
+    public static int getX() {
+        return X;
     }
+
+    public static int getY() {
+        return Y;
+    }
+
+    public void setX(int XX) {
+        this.X = XX;
+    }
+
+    public void setY(int YY) {
+        this.Y = YY;
+    }
+
 
     public static void setDispalyHeight(int dispalyHeight) {
         Vars.dispalyHeight = dispalyHeight;
@@ -158,9 +165,13 @@ public class Vars {
         return addHpPerTap;
     }
 
-    public  static void setHighscore(int highscore){Vars.highscore=highscore;}
+    public static void setHighscore(int highscore) {
+        Vars.highscore = highscore;
+    }
 
-    public static int getHighscore(){return highscore;}
+    public static int getHighscore() {
+        return highscore;
+    }
 
     public static void setBombChance(int bombCance) {
         Vars.bombChance = bombChance;
@@ -176,21 +187,5 @@ public class Vars {
 
     public static int getBoosterChance() {
         return boosterChance;
-    }
-
-    public static void setHealPerHealCircle(int healPerHealCircle) {
-        Vars.healPerHealCircle = healPerHealCircle;
-    }
-
-    public static int getHealPerHealCircle() {
-        return healPerHealCircle;
-    }
-
-    public static void setBombReduceMult(double bombReduceMult) {
-        Vars.bombReduceMult = bombReduceMult;
-    }
-
-    public static double getBombReduceMult() {
-        return bombReduceMult;
     }
 }

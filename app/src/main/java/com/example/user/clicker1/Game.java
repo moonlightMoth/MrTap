@@ -208,12 +208,14 @@ public class Game extends AppCompatActivity {
     {
         public void onClick(DialogInterface dialog, int which)
         {
+            Vars vars=new Vars();
             switch (which)
             {
                 case Dialog.BUTTON_POSITIVE:
                     the.start();
                     break;
                 case Dialog.BUTTON_NEGATIVE:
+//                    vars.setCoinsInThisRun(0);
                     Intent i=new Intent(this_, Game.class);
                     finish();
                     startActivity(i);
