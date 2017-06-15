@@ -49,7 +49,7 @@ public class Coins extends AppCompatButton {
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                vars.setCoins(Settings.getCoins()+vars.getCPC());
+                vars.setCoins(Settings.getCoins()+(vars.getCPC()*vars.getPops()/10)+1);
 
                 Settings.setCoins(Vars.getCoins());
 
