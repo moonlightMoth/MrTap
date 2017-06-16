@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -51,6 +52,7 @@ public class Game extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Vars.setMaxPops(Settings.getRecord());
         Vars.setMaxTaps(Settings.getTaps());
     }
@@ -71,6 +73,8 @@ public class Game extends AppCompatActivity {
 
         vars.setPops(0);
         vars.setTaps(0);
+        vars.setMinNuberOfTapToDestroy(2);
+        vars.setMaxNuberOfTapToDestroy(4);
         vars.setDispalyHeight(displayMetrics.heightPixels);
         vars.setDispalyWidth(displayMetrics.widthPixels);
 
@@ -112,6 +116,13 @@ public class Game extends AppCompatActivity {
 
 
     }
+
+    public void onResume()
+    {
+        super.onResume();
+    }
+
+
 
     public void setButtVision(PublicButton gb,
                               PublicButton yb,
@@ -180,6 +191,8 @@ public class Game extends AppCompatActivity {
 
     protected void onPause(){
         super.onPause();
+        finish();
+
     }
 
 

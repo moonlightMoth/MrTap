@@ -19,7 +19,7 @@ public class Vars {
     private static int X;
     private static int Y;
     private static int bombChance = 10;
-    private static int boosterChance = 20;
+    private static int boosterChance = 10;
     private static double bombDMG=0.1;
 
 //    private static int CoinsInThisRun=0;

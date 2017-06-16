@@ -81,12 +81,12 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
 
                 if (vars.getClicked()>=Settings.getNumOfClicksPerTap()) {
                     vars.setTaps(vars.getTaps() + Settings.getNumOfClicksPerTap());
-                    hp.setProgress(hp.getProgress()+vars.getAddHpPerTap()*Settings.getNumOfClicksPerTap());
                 }
                 else {
-                    hp.setProgress(hp.getProgress()+vars.getAddHpPerTap()*vars.getClicked());
                     vars.setTaps(vars.getTaps() + vars.getClicked());
                 }
+
+                hp.setProgress(hp.getProgress()+vars.getAddHpPerTap());
 
 
                 vars.setClicked(vars.getClicked()-Settings.getNumOfClicksPerTap());
@@ -102,8 +102,8 @@ public class PublicButton extends android.support.v7.widget.AppCompatButton {
                     vars.setPops(vars.getPops()+1);
                     hp.setProgress(hp.getProgress()+vars.getAddHpPerPop());
                     pops.setText("pops: " + vars.getPops());
-                    vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+2);
-                    vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+2);
+                    vars.setMaxNuberOfTapToDestroy(vars.getMaxNuberOfTapToDestroy()+1);
+                    vars.setMinNuberOfTapToDestroy(vars.getMinNuberOfTapToDestroy()+1);
                     setVisibility(View.GONE);
                     bomb.setVisibility(View.GONE);
                     coins.setVisibility(View.GONE);

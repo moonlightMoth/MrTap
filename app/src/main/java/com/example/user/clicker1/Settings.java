@@ -17,7 +17,7 @@ public class Settings {
     private static int  coinsToUpCPC=10;
 
     private static int healPerHealCircle=150;
-    private static int bombReduceMult =9;
+    private static int bombReduceMult =1;
     private static int CPC=1;
     private static int numOfClicksPerTap = 1;
     public Settings() {
