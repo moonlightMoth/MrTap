@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 Settings.setCoinsToRedDPB(5);
                 Settings.setCoinsToUpCPC(10);
                 Settings.setCoinsToUpCPT(1);
+                Vars.setMaxPops(0);
+                Vars.setMaxTaps(0);
                 Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
             }
         });
@@ -81,12 +83,14 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onPause(){
         super.onPause();
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
         Log.d(llog,"MainMenu paused");
 
     }
 
     protected void onDestroy(){
         super.onDestroy();
+        Settings.setSharedPreferences(getSharedPreferences("appSetings", Context.MODE_PRIVATE));
 
         Log.d(llog,"App sdoh nahui");
     }
