@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@android:color/black"
     android:orientation="vertical"
     tools:context=".Game"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        >
+        android:id="@+id/linearLayout">
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="100"
-            android:scaleY="4"
-            />
+            android:max="1000"
+            android:progress="1000"
+            android:scaleY="4" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="pops: "
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:id="@+id/pops"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pops: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:id="@+id/pops"/>
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="taps: "
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:id="@+id/taps"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="taps: "
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:id="@+id/taps"/>
+            </LinearLayout>
 
+            <Button
+                android:id="@+id/Pause"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Pause" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="346dp"
         android:textColor="#FE6767"
         android:textSize="120sp"
         android:text="Game Over"
@@ -53,9 +70,10 @@
         android:textStyle="bold"
         android:visibility="gone"
         android:id="@+id/endTitle"
-        />
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
 
-    <com.example.user.yahotelcrasivononet.PublicButton
+    <com.example.user.clicker1.PublicButton
 
         android:layout_width="60pt"
         android:layout_height="60pt"
@@ -64,7 +82,7 @@
         android:id="@+id/roundGreen"
         android:textSize="50sp" />
 
-    <com.example.user.yahotelcrasivononet.PublicButton
+    <com.example.user.clicker1.PublicButton
         android:layout_width="60pt"
         android:layout_height="60pt"
         android:background="@drawable/yellow_button"
@@ -72,17 +90,63 @@
         android:id="@+id/roundYellow"
         android:textSize="50sp" />
 
+    <com.example.user.clicker1.PublicButton
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/blue_button"
+        android:text=""
+        android:id="@+id/roundBlue"
+        android:textSize="50sp" />
 
-    <com.example.user.yahotelcrasivononet.Bomb
+
+    <com.example.user.clicker1.Bomb
         android:layout_width="60pt"
         android:layout_height="60pt"
         android:background="@drawable/bomb_states"
         android:id="@+id/bomb"
         android:visibility="gone"/>
 
+    <Button
+        android:id="@+id/toMenu"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button2"
+        android:text="MAIN MENU"
+        android:visibility="gone"
+        android:layout_above="@+id/Restart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
+
+    <Button
+        android:id="@+id/Restart"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button3"
+        android:text="RESTART"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/toMenu" />
+
+    <com.example.user.clicker1.Coins
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/coins_states"
+        android:id="@+id/coins"
+        android:visibility="gone"/>
+
+
+    <com.example.user.clicker1.Heal
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:background="@drawable/heal_states"
+        android:id="@+id/heal"
+        android:visibility="gone"
+        android:text="+"
+        android:textSize="60dp"
+        android:textColor="#ff99cc00"/>
 
 
 
 
 
-</LinearLayout>
+</RelativeLayout>
